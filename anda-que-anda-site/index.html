@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>ANDA QUE ANDA — Grupo de Teatro (Las Palmas)</title>
+    <meta
+      name="description"
+      content="ANDA QUE ANDA: grupo de teatro en Las Palmas. Agenda, producciones, galería y contacto para reservas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#0b0b0f',
+              'stage-red': '#e11d48',
+              'dark-green': '#14532d',
+              ink: '#111827',
+              mist: '#f3f4f6',
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia', 'Times New Roman', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .hero-overlay {
+        background: radial-gradient(1000px 500px at 20% 0%, rgba(225, 29, 72, 0.35), transparent 60%),
+          linear-gradient(180deg, rgba(11, 11, 15, 0.15), rgba(11, 11, 15, 0.92));
+      }
+      .hero-bg {
+        background-image: radial-gradient(circle at 20% 10%, rgba(225, 29, 72, 0.25), transparent 40%),
+          radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.08), transparent 45%),
+          linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(11, 11, 15, 1));
+      }
+      /* Mobile optimizations */
+      @media (max-width: 640px) {
+        html {
+          -webkit-text-size-adjust: 100%;
+          -webkit-tap-highlight-color: transparent;
+        }
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+      /* Hide scrollbar for mobile nav */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      /* Touch-friendly interactions */
+      .touch-manipulation {
+        touch-action: manipulation;
+      }
+      /* Better image loading */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-sans text-ink">
+      <!-- Header -->
+      <header class="sticky top-0 z-50 border-b border-black/10 bg-white/95 sm:bg-white/80 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2.5 sm:py-3">
+          <a href="./index.html" class="group inline-flex items-center gap-2 sm:gap-3">
+            <img
+              src="/vite.svg"
+              alt="ANDA QUE ANDA logo"
+              class="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-contain ring-1 ring-black/10"
+            />
+            <span class="font-serif text-lg sm:text-xl font-semibold tracking-wide text-ink">ANDA QUE ANDA</span>
+            <span class="hidden text-xs font-semibold tracking-wide text-ink/60 sm:inline">Las Palmas</span>
+            <span class="ml-1 inline-flex h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+          </a>
+
+          <nav class="hidden items-center gap-3 sm:gap-5 md:flex" aria-label="Primary">
+            <a href="./index.html" class="text-sm font-semibold tracking-wide text-dark-green">Inicio</a>
+            <a href="./asociacion.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Asociación</a
+            >
+            <a href="./productions.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Producciones</a
+            >
+            <a href="./gallery.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Galería</a
+            >
+            <a href="./members.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Miembros</a
+            >
+            <a href="./agenda.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Agenda</a
+            >
+            <a href="./contact.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+              >Contacto</a
+            >
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <div class="hidden items-center gap-2 sm:flex">
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                >IG</a
+              >
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://www.facebook.com/search/top/?q=asociaci%C3%B3n%20artistica%20sociocultural%20anda%20que%20anda"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                >FB</a
+              >
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                title="YouTube"
+                >YT</a
+              >
+            </div>
+
+            <a
+              href="./contact.html"
+              class="inline-flex items-center rounded-full bg-charcoal px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white transition hover:bg-ink active:scale-95 touch-manipulation"
+              >Reservas</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile nav -->
+        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-2 sm:gap-3 overflow-x-auto px-3 sm:px-4 pb-2.5 sm:pb-3 md:hidden scrollbar-hide">
+          <a href="./index.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1">Inicio</a>
+          <a href="./asociacion.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Asociación</a
+          >
+          <a href="./productions.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Producciones</a
+          >
+          <a href="./gallery.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Galería</a
+          >
+          <a href="./members.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Miembros</a
+          >
+          <a href="./agenda.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Agenda</a
+          >
+          <a href="./contact.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+            >Contacto</a
+          >
+        </nav>
+      </header>
+
+      <main class="mx-auto max-w-6xl px-4 py-6 sm:py-8 md:py-10">
+        <!-- Hero -->
+        <section class="relative overflow-hidden rounded-3xl bg-charcoal">
+          <div
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/homepage-hero.jpg');"
+            aria-hidden="true"
+          ></div>
+          <div class="hero-bg absolute inset-0 opacity-90" aria-hidden="true"></div>
+          <div class="hero-overlay absolute inset-0" aria-hidden="true"></div>
+
+          <div class="relative grid gap-6 sm:gap-8 px-4 sm:px-6 py-10 sm:py-14 md:grid-cols-12 md:gap-10 md:px-12 md:py-18">
+            <div class="md:col-span-7">
+              <div
+                class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-widest text-white ring-1 ring-white/15"
+              >
+                <span class="h-1.5 w-1.5 rounded-full bg-stage-red" aria-hidden="true"></span>
+                TEATRO EN LAS PALMAS
+              </div>
+
+              <h1 class="mt-5 font-serif text-3xl sm:text-4xl font-semibold leading-tight text-white md:text-5xl">
+                Un escenario para historias que se quedan contigo.
+              </h1>
+              <p class="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-white/80 md:text-lg">
+                ANDA QUE ANDA es un grupo de teatro con mirada cálida y profesional: producciones originales, elenco
+                internacional y funciones que conectan con la ciudad.
+              </p>
+
+              <div class="mt-7 flex flex-wrap items-center gap-3">
+                <a
+                  href="./agenda.html"
+                  class="inline-flex items-center justify-center rounded-full bg-stage-red px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-stage-red/20 transition hover:brightness-110 active:scale-95 touch-manipulation"
+                  >Ver Agenda</a
+                >
+                <a
+                  href="./productions.html"
+                  class="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-white ring-1 ring-white/15 transition hover:bg-white/15 active:scale-95 touch-manipulation"
+                  >Producciones</a
+                >
+              </div>
+
+              <div class="mt-8 rounded-2xl border border-white/15 bg-white/5 p-4 text-white/85">
+                <div class="text-xs font-semibold tracking-widest text-white/70">NEXT UP</div>
+                <div class="mt-2 text-lg font-semibold" id="nextTitle">La Librería de las Almas</div>
+                <div class="mt-1 text-sm text-white/75" id="nextMeta">
+                  Sat, Mar 7, 2026 · 20:30 · Las Palmas de Gran Canaria
+                </div>
+              </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="md:col-span-5 md:self-end">
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
+                <div class="text-xs font-semibold tracking-widest text-white/80">NEXT PERFORMANCE</div>
+                <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  <div class="rounded-xl bg-charcoal/70 px-3 py-3 text-center text-white ring-1 ring-white/10">
+                    <div class="font-serif text-2xl font-semibold leading-none" id="cdDays">--</div>
+                    <div class="mt-1 text-[10px] font-semibold tracking-widest text-white/70">Days</div>
+                  </div>
+                  <div class="rounded-xl bg-charcoal/70 px-3 py-3 text-center text-white ring-1 ring-white/10">
+                    <div class="font-serif text-2xl font-semibold leading-none" id="cdHours">--</div>
+                    <div class="mt-1 text-[10px] font-semibold tracking-widest text-white/70">Hours</div>
+                  </div>
+                  <div class="rounded-xl bg-charcoal/70 px-3 py-3 text-center text-white ring-1 ring-white/10">
+                    <div class="font-serif text-2xl font-semibold leading-none" id="cdMin">--</div>
+                    <div class="mt-1 text-[10px] font-semibold tracking-widest text-white/70">Min</div>
+                  </div>
+                  <div class="rounded-xl bg-charcoal/70 px-3 py-3 text-center text-white ring-1 ring-white/10">
+                    <div class="font-serif text-2xl font-semibold leading-none" id="cdSec">--</div>
+                    <div class="mt-1 text-[10px] font-semibold tracking-widest text-white/70">Sec</div>
+                  </div>
+                </div>
+                <div class="mt-3 hidden text-xs font-semibold text-white/80" id="cdOver">
+                  Today’s the day — see you at the theatre.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="mt-8 sm:mt-12 grid gap-4 sm:gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-black/10 bg-white p-6">
+            <div class="font-semibold text-ink">Mobile-first Agenda</div>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">
+              Fecha, hora y ubicación en primer plano, con enlace de mapa para llegar en segundos.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-black/10 bg-white p-6">
+            <div class="font-semibold text-ink">Producciones y ensayos</div>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">
+              Cuatro obras destacadas y un espacio especial para lo que estamos creando ahora.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-black/10 bg-white p-6">
+            <div class="font-semibold text-ink">Galería y videos</div>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">
+              Masonry de fotos y slots para YouTube/Vimeo con momentos de funciones pasadas.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-black/10 bg-white">
+        <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+          <div>
+            <div class="font-serif text-lg font-semibold text-ink">ANDA QUE ANDA</div>
+            <p class="mt-2 max-w-sm text-sm text-ink/70">
+              Grupo de teatro en Las Palmas. Producciones originales, funciones solidarias y un espíritu internacional
+              sobre el escenario.
+            </p>
+          </div>
+
+          <div class="text-sm">
+            <div class="font-semibold text-ink">Contacto</div>
+            <div class="mt-2 space-y-1 text-ink/70">
+              <div>Las Palmas de Gran Canaria</div>
+              <div>Email: <span class="text-ink/80">contacto@andaqueanda.es</span> (placeholder)</div>
+              <div>WhatsApp: <span class="text-ink/80">+39 335 715 0090</span></div>
+            </div>
+          </div>
+
+          <div class="md:justify-self-end">
+            <div class="font-semibold text-ink">Follow</div>
+            <div class="mt-2 flex items-center gap-2">
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                >IG</a
+              >
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://www.facebook.com/search/top/?q=asociaci%C3%B3n%20artistica%20sociocultural%20anda%20que%20anda"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                >FB</a
+              >
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-ink backdrop-blur transition hover:border-stage-red/40 hover:text-stage-red"
+                href="https://youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                title="YouTube"
+                >YT</a
+              >
+            </div>
+            <p class="mt-4 text-xs text-ink/60">© <span id="year"></span> ANDA QUE ANDA. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- WhatsApp Floating Button -->
+      <a
+        href="https://wa.me/393357150090?text=Hola%20ANDA%20QUE%20ANDA.%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20de%20pr%C3%B3ximas%20funciones."
+        target="_blank"
+        rel="noreferrer"
+        class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 inline-flex items-center gap-2 rounded-full bg-stage-red px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-stage-red/20 transition hover:brightness-110 active:scale-95 touch-manipulation"
+        aria-label="Reservas por WhatsApp"
+        title="Reservas por WhatsApp"
+      >
+        <span class="inline-flex h-2 w-2 rounded-full bg-white" aria-hidden="true"></span>
+        <span class="hidden sm:inline">WhatsApp</span><span class="sm:hidden">WA</span>
+      </a>
+
+      <script>
+        // Footer year
+        document.getElementById('year').textContent = String(new Date().getFullYear())
+
+        // Countdown (edit this date/time if needed)
+        const TARGET_ISO = '2026-03-07T20:30:00+00:00'
+        const target = new Date(TARGET_ISO).getTime()
+
+        const elDays = document.getElementById('cdDays')
+        const elHours = document.getElementById('cdHours')
+        const elMin = document.getElementById('cdMin')
+        const elSec = document.getElementById('cdSec')
+        const elOver = document.getElementById('cdOver')
+
+        const pad2 = (n) => String(n).padStart(2, '0')
+
+        function tick() {
+          const now = Date.now()
+          const diff = target - now
+          if (diff <= 0) {
+            elDays.textContent = '0'
+            elHours.textContent = '00'
+            elMin.textContent = '00'
+            elSec.textContent = '00'
+            elOver.classList.remove('hidden')
+            return
+          }
+          const totalSeconds = Math.floor(diff / 1000)
+          const days = Math.floor(totalSeconds / (3600 * 24))
+          const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600)
+          const minutes = Math.floor((totalSeconds % 3600) / 60)
+          const seconds = Math.floor(totalSeconds % 60)
+          elDays.textContent = String(days)
+          elHours.textContent = pad2(hours)
+          elMin.textContent = pad2(minutes)
+          elSec.textContent = pad2(seconds)
+        }
+
+        tick()
+        setInterval(tick, 1000)
+      </script>
+  </body>
+</html>

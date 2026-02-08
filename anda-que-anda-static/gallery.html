@@ -1,0 +1,183 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Galería — ANDA QUE ANDA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#0b0b0f',
+              'stage-red': '#e11d48',
+              ink: '#111827',
+              mist: '#f3f4f6',
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia', 'Times New Roman', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .masonry img {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white font-sans text-ink">
+    <header class="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <a href="./index.html" class="group inline-flex items-baseline gap-2">
+          <span class="font-serif text-lg font-semibold tracking-wide text-ink">ANDA QUE ANDA</span>
+          <span class="hidden text-xs font-semibold tracking-wide text-ink/60 sm:inline">Las Palmas</span>
+          <span class="ml-1 inline-flex h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+        </a>
+        <nav class="hidden items-center gap-5 md:flex">
+          <a href="./index.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red">Inicio</a>
+          <a href="./asociacion.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Asociación</a
+          >
+          <a href="./members.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Miembros</a
+          >
+          <a href="./productions.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Producciones</a
+          >
+          <a href="./proyectos.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Proyectos</a
+          >
+          <a href="./agenda.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Agenda</a
+          >
+          <a href="./contact.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+            >Contacto</a
+          >
+        </nav>
+        <a href="./contact.html" class="inline-flex items-center rounded-full bg-charcoal px-4 py-2 text-sm font-semibold text-white hover:bg-ink"
+          >Reservas</a
+        >
+      </div>
+      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-x-auto px-4 pb-3 md:hidden">
+        <a href="./index.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red">Inicio</a>
+        <a href="./asociacion.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Asociación</a
+        >
+        <a href="./members.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Miembros</a
+        >
+        <a href="./productions.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Producciones</a
+        >
+        <a href="./proyectos.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Proyectos</a
+        >
+        <a href="./agenda.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Agenda</a
+        >
+        <a href="./contact.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
+          >Contacto</a
+        >
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <header class="space-y-2">
+        <h1 class="font-serif text-3xl font-semibold text-ink md:text-4xl">Galería (Eventos anteriores)</h1>
+        <p class="max-w-2xl text-sm leading-relaxed text-ink/70 md:text-base">
+          Un vistazo a funciones pasadas: fotos en masonry y espacios para vídeos.
+        </p>
+      </header>
+
+      <section class="mt-8 grid gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
+            <div class="text-xs font-semibold tracking-widest text-ink/60">FOTOS</div>
+            <div class="masonry mt-5 columns-2 gap-4 md:columns-3">
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-1/900/640" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-2/900/820" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-3/900/720" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-4/900/900" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-5/900/700" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-6/900/850" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-7/900/760" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-8/900/920" alt="" />
+              <img class="w-full rounded-2xl object-cover ring-1 ring-black/10" src="https://picsum.photos/seed/aqa-past-9/900/680" alt="" />
+            </div>
+            <p class="mt-2 text-xs text-ink/60">Fotos placeholder — sustituye por imágenes reales cuando quieras.</p>
+          </div>
+        </div>
+
+        <div class="space-y-6 lg:col-span-5">
+          <div class="text-xs font-semibold tracking-widest text-ink/60">VIDEOS</div>
+          <div class="overflow-hidden rounded-2xl border border-black/10 bg-white">
+            <div class="aspect-video w-full bg-mist">
+              <iframe
+                class="h-full w-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Momentos destacados — ANDA QUE ANDA (YouTube)"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-4">
+              <div class="text-sm font-semibold text-ink">Momentos destacados — ANDA QUE ANDA (YouTube)</div>
+              <div class="mt-1 text-xs text-ink/60">Espacio de vídeo (cámbialo por tu vídeo real).</div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl border border-black/10 bg-white">
+            <div class="aspect-video w-full bg-mist">
+              <iframe
+                class="h-full w-full"
+                src="https://player.vimeo.com/video/76979871"
+                title="Detrás de cámaras (Vimeo)"
+                loading="lazy"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-4">
+              <div class="text-sm font-semibold text-ink">Detrás de cámaras (Vimeo)</div>
+              <div class="mt-1 text-xs text-ink/60">Espacio de vídeo (cámbialo por tu vídeo real).</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-ink/70">
+        © <span id="year"></span> ANDA QUE ANDA · <a class="font-semibold text-stage-red" href="./contact.html">Contacto</a>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/393357150090?text=Hola%20ANDA%20QUE%20ANDA.%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20de%20pr%C3%B3ximas%20funciones."
+      target="_blank"
+      rel="noreferrer"
+      class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-stage-red px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-stage-red/20 transition hover:brightness-110"
+      aria-label="Reservas por WhatsApp"
+      title="Reservas por WhatsApp"
+      >WhatsApp</a
+    >
+
+    <script>
+      document.getElementById('year').textContent = String(new Date().getFullYear())
+    </script>
+  </body>
+</html>
+

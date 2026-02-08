@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Agenda — ANDA QUE ANDA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#0b0b0f',
+              'stage-red': '#e11d48',
+              'dark-green': '#14532d',
+              ink: '#111827',
+              mist: '#f3f4f6',
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia', 'Times New Roman', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Mobile optimizations */
+      @media (max-width: 640px) {
+        html {
+          -webkit-text-size-adjust: 100%;
+          -webkit-tap-highlight-color: transparent;
+        }
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+      /* Hide scrollbar for mobile nav */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      /* Touch-friendly interactions */
+      .touch-manipulation {
+        touch-action: manipulation;
+      }
+      /* Better image loading */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white font-sans text-ink">
+    <header class="sticky top-0 z-50 border-b border-black/10 bg-white/95 sm:bg-white/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2.5 sm:py-3">
+        <a href="./index.html" class="group inline-flex items-baseline gap-1.5 sm:gap-2">
+          <span class="font-serif text-lg sm:text-xl font-semibold tracking-wide text-ink">ANDA QUE ANDA</span>
+          <span class="hidden text-xs font-semibold tracking-wide text-ink/60 sm:inline">Las Palmas</span>
+          <span class="ml-1 inline-flex h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+        </a>
+        <nav class="hidden items-center gap-3 sm:gap-5 md:flex">
+          <a href="./index.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green">Inicio</a>
+          <a href="./asociacion.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+            >Asociación</a
+          >
+          <a href="./productions.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+            >Producciones</a
+          >
+          <a href="./gallery.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+            >Galería</a
+          >
+          <a href="./members.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+            >Miembros</a
+          >
+          <a href="./agenda.html" class="text-sm font-semibold tracking-wide text-dark-green">Agenda</a>
+          <a href="./contact.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green"
+            >Contacto</a
+          >
+        </nav>
+        <a
+          href="./contact.html"
+          class="inline-flex items-center rounded-full bg-charcoal px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white hover:bg-ink active:scale-95 touch-manipulation"
+          >Reservas</a
+        >
+      </div>
+      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-2 sm:gap-3 overflow-x-auto px-3 sm:px-4 pb-2.5 sm:pb-3 md:hidden scrollbar-hide">
+        <a href="./index.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1">Inicio</a>
+        <a href="./asociacion.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+          >Asociación</a
+        >
+        <a href="./productions.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+          >Producciones</a
+        >
+        <a href="./gallery.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+          >Galería</a
+        >
+        <a href="./members.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+          >Miembros</a
+        >
+        <a href="./agenda.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1">Agenda</a>
+        <a href="./contact.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-dark-green whitespace-nowrap py-1"
+          >Contacto</a
+        >
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-6 sm:py-8 md:py-10">
+      <header class="space-y-2">
+        <h1 class="font-serif text-2xl sm:text-3xl font-semibold text-ink md:text-4xl">Agenda</h1>
+        <p class="max-w-2xl text-xs sm:text-sm leading-relaxed text-ink/70 md:text-base">
+          Próximos eventos. Diseñado para móvil: ubicación y hora siempre visibles.
+        </p>
+      </header>
+
+      <section class="mt-6 sm:mt-8 space-y-4">
+        <article class="rounded-2xl border border-black/10 bg-white p-5 hover:border-stage-red/25">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="text-lg font-semibold text-ink">La Librería de las Almas</div>
+              <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+                <span class="inline-flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+                  Sat, Mar 7, 2026
+                </span>
+                <span class="text-ink/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-ink">20:30</span>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Centro%20Cultural%20Las%20Palmas"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center rounded-full bg-mist px-4 py-2 text-sm font-semibold text-ink hover:bg-stage-red/10 hover:text-stage-red"
+              >Open map</a
+            >
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-semibold tracking-widest text-ink/60">LOCATION</div>
+            <div class="mt-1 text-sm text-ink/80">Centro Cultural (Las Palmas)</div>
+            <div class="mt-2 text-sm text-ink/65">Entrada libre hasta completar aforo.</div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-black/10 bg-white p-5 hover:border-stage-red/25">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="text-lg font-semibold text-ink">El Camino de Santiago entre volcanes</div>
+              <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+                <span class="inline-flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+                  Sat, Mar 21, 2026
+                </span>
+                <span class="text-ink/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-ink">19:00</span>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Plaza%20de%20Santa%20Ana%20Las%20Palmas"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center rounded-full bg-mist px-4 py-2 text-sm font-semibold text-ink hover:bg-stage-red/10 hover:text-stage-red"
+              >Open map</a
+            >
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-semibold tracking-widest text-ink/60">LOCATION</div>
+            <div class="mt-1 text-sm text-ink/80">Plaza de Santa Ana</div>
+            <div class="mt-2 text-sm text-ink/65">Función al aire libre (según meteorología).</div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-black/10 bg-white p-5 hover:border-stage-red/25">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="text-lg font-semibold text-ink">Muestra / Ensayo abierto — La Cofradía de la Sardina</div>
+              <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+                <span class="inline-flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+                  Sat, Apr 4, 2026
+                </span>
+                <span class="text-ink/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-ink">18:30</span>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Las%20Palmas%20de%20Gran%20Canaria"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center rounded-full bg-mist px-4 py-2 text-sm font-semibold text-ink hover:bg-stage-red/10 hover:text-stage-red"
+              >Open map</a
+            >
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-semibold tracking-widest text-ink/60">LOCATION</div>
+            <div class="mt-1 text-sm text-ink/80">Ensayo abierto (ubicación por confirmar)</div>
+            <div class="mt-2 text-sm text-ink/65">Próximamente más detalles.</div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-black/10 bg-white p-5 hover:border-stage-red/25">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="text-lg font-semibold text-ink">El Camino de Santiago entre volcanes (Sesión especial)</div>
+              <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+                <span class="inline-flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-stage-red" aria-hidden="true"></span>
+                  Sat, Apr 18, 2026
+                </span>
+                <span class="text-ink/35" aria-hidden="true">·</span>
+                <span class="font-semibold text-ink">17:30</span>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Hospital%20Universitario%20Dr.%20Negr%C3%ADn%20Las%20Palmas"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center rounded-full bg-mist px-4 py-2 text-sm font-semibold text-ink hover:bg-stage-red/10 hover:text-stage-red"
+              >Open map</a
+            >
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-semibold tracking-widest text-ink/60">LOCATION</div>
+            <div class="mt-1 text-sm text-ink/80">Hospital Univ. de Gran Canaria Dr. Negrín</div>
+            <div class="mt-2 text-sm text-ink/65">Función adaptada y solidaria.</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-ink/70">
+        © <span id="year"></span> ANDA QUE ANDA · <a class="font-semibold text-stage-red" href="./contact.html">Contacto</a>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/393357150090?text=Hola%20ANDA%20QUE%20ANDA.%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20de%20pr%C3%B3ximas%20funciones."
+      target="_blank"
+      rel="noreferrer"
+      class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 inline-flex items-center gap-2 rounded-full bg-stage-red px-3 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-stage-red/20 transition hover:brightness-110 active:scale-95 touch-manipulation"
+      aria-label="Reservas por WhatsApp"
+      title="Reservas por WhatsApp"
+      ><span class="hidden sm:inline">WhatsApp</span><span class="sm:hidden">WA</span></a
+    >
+
+    <script>
+      document.getElementById('year').textContent = String(new Date().getFullYear())
+    </script>
+  </body>
+</html>
