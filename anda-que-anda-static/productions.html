@@ -75,7 +75,7 @@
             >Asociación</a
           >
           <a href="./members.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
-            >Miembros</a
+            >Nosotros</a
           >
           <a href="./productions.html" class="text-sm font-semibold tracking-wide text-stage-red">Producciones</a>
           <a href="./proyectos.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
@@ -98,7 +98,7 @@
           >Asociación</a
         >
         <a href="./members.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red whitespace-nowrap py-1"
-          >Miembros</a
+          >Nosotros</a
         >
         <a href="./productions.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red whitespace-nowrap py-1">Producciones</a>
         <a href="./proyectos.html" class="text-xs sm:text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red whitespace-nowrap py-1"
@@ -121,23 +121,23 @@
         </p>
       </header>
 
-      <section class="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <a href="#camino" class="rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+      <section id="drama-cards" class="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <a href="#camino" data-drama="camino" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">El Camino de Santiago entre volcanes</div>
           <p class="mt-2 text-sm text-ink/70">Una travesía íntima entre fe, humor y paisajes imposibles.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
         </a>
-        <a href="#libreria" class="rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        <a href="#libreria" data-drama="libreria" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">La Librería de las Almas</div>
           <p class="mt-2 text-sm text-ink/70">Cada libro guarda una vida. Algunas quieren ser leídas de nuevo.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
         </a>
-        <a href="#amor" class="rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        <a href="#amor" data-drama="amor" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">El amor no caduca</div>
           <p class="mt-2 text-sm text-ink/70">Una comedia tierna sobre el tiempo, los reencuentros y lo que nunca se vence.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
         </a>
-        <a href="#cofradia" class="rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        <a href="#cofradia" data-drama="cofradia" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="flex items-start justify-between gap-3">
             <div class="font-semibold text-ink">La Cofradía de la Sardina</div>
             <span class="rounded-full bg-stage-red/10 px-2 py-1 text-xs font-semibold text-stage-red ring-1 ring-stage-red/20"
@@ -147,7 +147,7 @@
           <p class="mt-2 text-sm text-ink/70">Un secreto se cocina a fuego lento… y huele a carnaval.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
         </a>
-        <a href="#amarga" class="rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        <a href="#amarga" data-drama="amarga" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="flex items-start justify-between gap-3">
             <div class="font-semibold text-ink">Amarga Navidad</div>
             <span class="rounded-full bg-stage-red/10 px-2 py-1 text-xs font-semibold text-stage-red ring-1 ring-stage-red/20"
@@ -159,206 +159,213 @@
         </a>
       </section>
 
+      <div id="back-to-list" class="mt-6 hidden">
+        <a href="#drama-cards" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
+          ← Volver a producciones
+        </a>
+      </div>
+
       <!-- Production blocks -->
       <section class="mt-10 space-y-12">
-        <article id="camino" class="scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10">
+        <article id="camino" class="drama-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
           <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">El Camino de Santiago entre volcanes</h2>
-          <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image1.jpeg" alt="image1.jpeg" />
+          <div class="mt-3 max-w-3xl space-y-4 text-sm text-ink/70 md:text-base">
+            <div class="my-4">
+              <img src="./assets/camino-1.jpg" alt="El Camino de Santiago entre volcanes" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div>
-              <h3 class="font-serif text-xl font-semibold text-ink mb-3">Introducción</h3>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Caminar no es simplemente poner un pie delante del otro; es una conversación silenciosa entre la tierra que pisamos y las almas de nuestros ancestros que aún la habitan. En El Camino de Santiago entre volcanes, la ruta que une las dunas de Maspalomas con el templo matriz y arciprestal de Santiago de Los Caballeros de Gáldar no se mide en kilómetros, sino en latidos.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Aquí, donde el basalto guarda el calor de los siglos, un grupo de seis caminantes se aventura no solo a cruzar barrancos y cumbres, sino a atravesar sus propios miedos. Entre el aroma de las tabaibas y la sombra de los pinos, el estrés de la ciudad se disuelve para dar paso a las preguntas que siempre evitamos: ¿Quiénes somos cuando nos quedamos a solas con nuestra respiración? ¿Qué buscamos realmente cuando miramos al horizonte?</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Bajo la mirada atenta de una Diosa que es raíz y es viento, estos viajeros descubrirán que el Camino de la Plata es un espejo. Unos buscan salud, otros buscan fe, y algunos, sin saberlo, buscan el valor para volver a amar. En este trayecto, los antiguos rituales aborígenes se entrelazan con la promesa del apóstol, recordándonos que somos "arquitectos de nuestra propia vida".</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>El texto es moderno, cautivador y habla de temas siempre actuales como la amistad, la enfermedad, la identidad sexual, el amor, la espiritualidad.  Una comedia que invita el público a reflexionar a la par  lo que entretiene.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Porque el Camino es una metáfora de la vida, por lo que cada espectador se lo llevará a casa en su corazón.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Bienvenidos a una travesía de luz, sal y ceniza. Bienvenidos al Camino donde, al buscar la senda, terminas encontrándote a ti mismo.</p>
-              </div>
+            <p><strong>Dirección:</strong> Ruth Plata Léon</p>
+            <p><strong>Guion:</strong> Nicoletta Cristina Pennati</p>
+            <p><strong>ANDA QUE ANDA ASOCIACION</strong></p>
+            
+            <h3 class="mt-6 font-serif text-xl font-semibold text-ink">Introducción</h3>
+            <p>Caminar no es simplemente poner un pie delante del otro; es una conversación silenciosa entre la tierra que pisamos y las almas de nuestros ancestros que aún la habitan. En <em>El Camino de Santiago entre volcanes</em>, la ruta que une las dunas de Maspalomas con el templo matriz y arciprestal de Santiago de Los Caballeros de Gáldar no se mide en kilómetros, sino en latidos.</p>
+            <p>Aquí, donde el basalto guarda el calor de los siglos, un grupo de seis caminantes se aventura no solo a cruzar barrancos y cumbres, sino a atravesar sus propios miedos. Entre el aroma de las tabaibas y la sombra de los pinos, el estrés de la ciudad se disuelve para dar paso a las preguntas que siempre evitamos: ¿Quiénes somos cuando nos quedamos a solas con nuestra respiración? ¿Qué buscamos realmente cuando miramos al horizonte?</p>
+            <p>Bajo la mirada atenta de una Diosa que es raíz y es viento, estos viajeros descubrirán que el Camino de la Plata es un espejo. Unos buscan salud, otros buscan fe, y algunos, sin saberlo, buscan el valor para volver a amar. En este trayecto, los antiguos rituales aborígenes se entrelazan con la promesa del apóstol, recordándonos que somos "arquitectos de nuestra propia vida".</p>
+            <p>El texto es moderno, cautivador y habla de temas siempre actuales como la amistad, la enfermedad, la identidad sexual, el amor, la espiritualidad. Una comedia que invita el público a reflexionar a la par lo que entretiene.</p>
+            <p>Porque el Camino es una metáfora de la vida, por lo que cada espectador se lo llevará a casa en su corazón.</p>
+            <p>Bienvenidos a una travesía de luz, sal y ceniza. Bienvenidos al Camino donde, al buscar la senda, terminas encontrándote a ti mismo.</p>
+            <div class="my-4">
+              <img src="./assets/camino-2.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image2.jpeg" alt="image2.jpeg" />
+            
+            <h3 class="mt-6 font-serif text-xl font-semibold text-ink">Características de la obra</h3>
+            <p>"El Camino de Santiago entre volcanes", es una obra teatral de carácter espiritual, pedagógico y costumbrista que utiliza el senderismo en Gran Canaria como motor de transformación para sus personajes.</p>
+            
+            <h4 class="mt-4 font-semibold text-ink">1. Temática y Dualidad Cultural</h4>
+            <p>El guion fusiona dos mundos que conviven en la identidad canaria:</p>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Misticismo Aborigen:</strong> La obra abre con cantos en lengua guanche dirigidos a <em>Magec</em> (el sol). La presencia de la <strong>Diosa</strong> actúa como un puente entre el pasado prehispánico y el presente.</li>
+              <li><strong>Tradición Cristiana:</strong> Se estructura en torno al <strong>Camino de Santiago canario</strong> (Maspalomas - Gáldar), mencionando hitos como la Iglesia de Tunte y la imagen de Santiago el Chico.</li>
+              <li><strong>Crecimiento Personal:</strong> El "Camino" se presenta explícitamente como una <strong>metáfora de la vida</strong>. Los personajes buscan respuestas al vacío existencial, el estrés laboral, el miedo al compromiso o la superación de enfermedades.</li>
+            </ul>
+            <div class="my-4">
+              <img src="./assets/camino-3.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div>
-              <h3 class="font-serif text-xl font-semibold text-ink mb-3">Características de la obra</h3>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>"El Camino de Santiago entre volcanes", es una obra teatral de carácter espiritual, pedagógico y costumbrista que utiliza el senderismo en Gran Canaria como motor de transformación para sus personajes.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>1. Temática y dualidad cultural</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>El guion fusiona dos mundos que conviven en la identidad canaria:</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Misticismo aborigen: La obra abre con cantos en lengua guanche dirigidos a Magec (el sol). La presencia de la Diosa actúa como un puente entre el pasado prehispánico y el presente.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Tradición cristiana: Se estructura en torno al Camino de Santiago canario (Maspalomas - Gáldar), mencionando hitos como la Iglesia de Tunte y la imagen de Santiago el Chico.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Crecimiento personal: El "Camino" se presenta explícitamente como una metáfora de la vida. Los personajes buscan respuestas al vacío existencial, el estrés laboral, el miedo al compromiso o la superación de enfermedades.</p>
-              </div>
+            
+            <h4 class="mt-4 font-semibold text-ink">2. Estructura y Ritmo</h4>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li><strong>División por Etapas:</strong> La narrativa no se divide solo por escenas convencionales, sino por las etapas reales del camino (Maspalomas-Arteara, Arteara-Fataga, Fataga-Tunte, Tunte-Cruz de Tejeda, Cruz de Tejeda-Saucillo, Saucillo-Gáldar). Esto da una sensación de progresión física y emocional.</li>
+              <li><strong>La Diosa como Narradora Omnisciente:</strong> El personaje de la Diosa rompe la "cuarta pared". Actúa como guía, da datos técnicos de los kilómetros a recorrer, comenta los sentimientos internos de los personajes (que ellos mismos a veces callan) y aporta el contexto histórico/legendario.</li>
+              <li><strong>Interactuaciones con el público:</strong> Es un formato de teatro interactivo con diferentes momentos divertidos y sorprendentes.</li>
+            </ul>
+            
+            <h4 class="mt-4 font-semibold text-ink">3. Personajes</h4>
+            <p>El grupo de caminantes representa un microcosmos de la sociedad actual:</p>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Juan:</strong> El guía espiritual del grupo. Superviviente de cáncer, aporta una visión optimista y conectada con la naturaleza (abraza árboles, camina descalzo).</li>
+              <li><strong>Felipe y María:</strong> Representan la amistad con tensión sexual no resuelta. Felipe es inseguro y busca su identidad; María es pragmática pero emocionalmente cautelosa.</li>
+              <li><strong>Carmen y Roberta:</strong> Aportan el contrapunto dinámico. Carmen es independiente y decidida, mientras que Roberta actúa como la voz de la razón (y los celos amistosos).</li>
+              <li><strong>Alex:</strong> El buscador de paz, vegetariano y meditador, que representa la desconexión con el mundo material de los "hoteles de lujo".</li>
+            </ul>
+            <div class="my-4">
+              <img src="./assets/camino-4.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image3.jpeg" alt="image3.jpeg" />
+            
+            <h4 class="mt-4 font-semibold text-ink">4. Lenguaje y Estilo</h4>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Localismo Canario:</strong> El lenguaje es auténtico y cercano, utilizando términos como guaguas, pa'lante, tías, bienmesabe, tabaibas y tuneras.</li>
+              <li><strong>Didactismo:</strong> El guion funciona casi como una guía cultural. Enseña sobre la Necrópolis de Arteara, la Caldera de Tejeda, el Roque Nublo y leyendas marineras.</li>
+            </ul>
+            
+            <h4 class="mt-4 font-semibold text-ink">5. Escenografía</h4>
+            <p>Elementos escénicos mínimos como: troncos y estructuras geométricas tridimensionales en madera, pintadas con colores naturales, por el artista canario Daniel Rodríguez Báez. Objetivo: crear un bosque mágico. Sin olvidar el gran mapa de la isla con dibujadas las seis etapas, desde Maspalomas hasta Gáldar y, sobre todo, las imágenes de los espléndidos paisajes, proyectadas en la pantalla gigante, las que permiten a los espectadores sumergirse en las atmósferas naturales y ancestrales del Camino canario entre volcanes.</p>
+            
+            <h4 class="mt-4 font-semibold text-ink">6. Música</h4>
+            <p>Motivos canarios y canciones pop con momentos de baile.</p>
+            <div class="my-4">
+              <img src="./assets/camino-5.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>2. Estructura y ritmo</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>División por etapas: La narrativa no se divide solo por escenas convencionales, sino por las etapas reales del camino (Maspalomas-Arteara, Arteara-Fataga, Fataga-Tunte, Tunte-Cruz de Tejeda, Cruz de Tejeda-Saucillo, Saucillo-Gáldar). Esto da una sensación de progresión física y emocional.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>La Diosa como narradora omnisciente: El personaje de la Diosa rompe la "cuarta pared". Actúa como guía, da datos técnicos de los kilómetros a recorrer, comenta los sentimientos internos de los personajes (que ellos mismos a veces callan) y aporta el contexto histórico y legendario.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Interactuaciones con el público: Es un formato de teatro interactivo con diferentes momentos divertidos y sorprendentes.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>3. Personajes</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>El grupo de caminantes representa un microcosmos de la sociedad actual:</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Juan: El guía espiritual del grupo. Superviviente de cáncer, aporta una visión optimista y conectada con la naturaleza (abraza árboles, camina descalzo).</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Felipe y María: Representan la amistad con tensión sexual no resuelta. Felipe es inseguro y busca su identidad; María es pragmática pero emocionalmente cautelosa.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Carmen y Roberta: Aportan el contrapunto dinámico. Carmen es independiente y decidida, mientras que Roberta actúa como la voz de la razón (y los celos amistosos).</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Alex: El buscador de paz, vegetariano y meditador, que representa la desconexión con el mundo material de los "hoteles de lujo".</p>
-              </div>
+            
+            <h3 class="mt-6 font-serif text-xl font-semibold text-ink">La autora</h3>
+            <p>Nicoletta Cristina Pennati, nacida en Milán (Italia), reside en Las Palmas de Gran Canaria. Licenciada en Ciencias Políticas, se convirtió en periodista profesional en 1981. Pasó los últimos veinte años de su carrera trabajando para el semanario <em>Io donna</em> del <em>Corriere della Sera</em>, el principal diario de Italia. Tiene un máster en NLP. Ha escrito cuatro libros, entre ellos el best seller <em>Prevenir el cáncer comiendo con gusto</em>, varios guiones teatrales, entre ellos: <em>¡Buen Camino! El Camino de Santiago entre volcanes</em>, <em>La librería de las Almas</em> y <em>La Confraternidad de la Sardina</em>, que se está preparando. Ha participado como voluntaria en el proyecto <em>Teatro en la cárcel</em> en el Centro Penitenciario Salto del Negro de Las Palmas con la Asociación Hestia. Ha ideado el Proyecto <em>TeHospiCan</em>, Teatro en los Hospitales de Canarias con lo cual, por primera vez el teatro aficionado entra con regularidad, en los 14 hospitales públicos de las islas Canarias; el <em>Proyecto TeTera</em> (TeatroTerapia), desarrollado en los 4 distritos de Las Palmas de Gran Canaria y en San Nicolás de Tolentino en la Aldea gracias a la colaboración con las respectivas concejalías de Servicios Sociales de los dos Ayuntamientos. En fin, está desarrollando el <em>Proyecto Todos somos Uno</em> (teatro inclusivo) con actores con diferentes discapacidades.</p>
+            <p>Forma parte del grupo de escritores de "Canaria escribe teatro".</p>
+            <div class="my-4">
+              <img src="./assets/camino-6.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image4.jpeg" alt="image4.jpeg" />
+            
+            <h3 class="mt-6 font-serif text-xl font-semibold text-ink">La directora</h3>
+            <p>Ruth Plata León, nacida en Las Palmas de Gran Canaria, vive en Santa Brigida. Se inició como locutora de radio lo que la llevó a formarse como actriz de doblaje, poniendo voz a documentales, anuncios y presentaciones.</p>
+            <p>Ha estudiado interpretación con Victoria Teijeiro, Fernando Soto y ha participado en numerosos cursos de interpretación ante cámara con profesionales del sector. Ha actuado en varios cortometrajes de producción canaria y en obras de teatro. La última por la dirección de Rosa Escrig: "Polígono" (Premio Replica para el mejor espectáculo 2025), "Con siete estrellas verdes" y en piezas de micro teatro.</p>
+            <p>Actual formación de dirección teatral en Madrid en diversos cursos intensivos; docente en arte escénica, master en teatro terapia; ayudante de dirección Compañía Intellectus et Anima. Responsable de la parte artística de la Asociación Anda que Anda y del Proyecto TeTera, TeatroTerapia en los cuatro distritos del Ayuntamiento de Las Palmas y en San Nicolás de Tolentino en la Aldea; directora de la compañía Antígona de la Once.</p>
+            <div class="my-4">
+              <img src="./assets/camino-7.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
-
-            <div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>4. Lenguaje y estilo</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Localismo canario: El lenguaje es auténtico y cercano, utilizando términos como guaguas, pa'lante, tías, bienmesabe, tabaibas y tuneras.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Didactismo: El guion funciona casi como una guía cultural. Enseña sobre la Necrópolis de Arteara, la Caldera de Tejeda, el Roque Nublo y leyendas marineras.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>5. Escenografía. Elementos escénicos mínimos como: troncos y estructuras geométricas tridimensionales en madera, pintadas con colores naturales, por el artista canario Daniel Rodríguez Báez. Objetivo: crear un bosque mágico. Sin olvidar el gran mapa de la isla con dibujadas las seis etapas, desde Maspalomas hasta Gáldar y, sobre todo, las imágenes de los espléndidos paisajes, proyectadas en la pantalla gigante, las que permiten a los espectadores sumergirse en las atmósferas naturales y ancestrales del Camino canario entre volcanes.</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>6. Música: Motivos canarios y música popular con momentos de baile.</p>
-              </div>
-            </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image5.jpeg" alt="image5.jpeg" />
-            </div>
-
-            <div>
-              <h3 class="font-serif text-xl font-semibold text-ink mb-3">La autora</h3>
-            </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image6.jpeg" alt="image6.jpeg" />
-            </div>
-
-            <div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Nicoletta Cristina Pennati, nacida en Milán (Italia), reside en Las Palmas de Gran Canaria. Licenciada en Ciencias Políticas, se convirtió en periodista profesional en 1981. Pasó los últimos veinte años de su carrera trabajando para el semanario Io donna del Corriere della Sera, el principal diario de Italia. Tiene un máster en Programación Neurolingüística. Ha escrito cuatro libros, entre ellos el superventas Prevenir el cáncer comiendo con gusto, varios guiones teatrales, entre ellos: ¡Buen Camino! El Camino de Santiago entre volcanes, La librería de las Almas y La Confraternidad de la Sardina, que se está preparando. Ha participado como voluntaria en el proyecto Teatro en la cárcel en el Centro Penitenciario Salto del Negro de Las Palmas con la Asociación Hestia. Ha ideado el Proyecto TeHospiCan, Teatro en los Hospitales de Canarias con lo cual, por primera vez el teatro aficionado entra con regularidad, en los 14 hospitales públicos de las islas Canarias; el Proyecto TeTera (TeatroTerapia), desarrollado en los 4 distritos de Las Palmas de Gran Canaria y en San Nicolás de Tolentino en la Aldea gracias a la colaboración con las respectivas concejalías de Servicios Sociales de los dos Ayuntamientos. En fin, está desarrollando el Proyecto Todos somos Uno (teatro inclusivo) con actores con diferentes discapacidades. Forma parte del grupo de escritores de "Canaria escribe teatro".</p>
-              </div>
-              <h3 class="font-serif text-xl font-semibold text-ink mb-3">La directora</h3>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Ruth Plata León, nacida en Las Palmas de Gran Canaria, vive en Santa Brígida. Se inició como locutora de radio lo que la llevó a formarse como actriz de doblaje, poniendo voz a documentales, anuncios y presentaciones. Ha estudiado interpretación con Victoria Teijeiro, Fernando Soto y ha participado en numerosos cursos de interpretación ante cámara con profesionales del sector. Ha actuado en varios cortometrajes de producción canaria y en obras de teatro. Las últimas por la dirección de Rosa Escrig: "Polígono" (Premio Réplica para el mejor espectáculo 2025), "Con siete estrellas verdes" y en piezas de micro teatro. Actual formación de dirección teatral en Madrid en diversos cursos intensivos; docente en arte escénica, máster en teatro terapia; ayudante de dirección Compañía Intellectus et Anima. Responsable de la parte artística de la Asociación Anda que Anda y del Proyecto TeTera, TeatroTerapia en los cuatro distritos del Ayuntamiento de Las Palmas y en San Nicolás de Tolentino en la Aldea; directora de la compañía Antígona de la Once.</p>
-              </div>
-            </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image7.jpeg" alt="image7.jpeg" />
-            </div>
-
-            <div>
-              <h3 class="font-serif text-xl font-semibold text-ink mb-3">Ficha técnica y reparto</h3>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Género: Comedia</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Guion: Nicoletta Cristina Pennati</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Directora: Ruth Plata Leon</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Duración: 60 minutos</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Reparto: Aitor Agero, Encarna Alemán, Angela De Prisco, Ana De Vega Gómez, Belinda Hernández García, Maryna Mezhuyeva Mezhuyeva, Ahmed Diop Wade, Jordán Hair Castro, Antonia Martin Soler, Borja Miranda Cano, José Luis Palomo, Marie Laure Truye</p>
-              </div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Escenografía: Daniel Rodríguez Báez. Dibujo: Libertad Reyes Torollo. Gráfica: Nicoletta Cristina Pennati. Fotografía: Franco Cappellari, Piergiorgio Pallara, Nicoletta Cristina Pennati. Técnico luces y música: Anchor Machín Loyzance. Promoción y Organización: Nicoletta Cristina Pennati, móvil 666133377, nicoletta.cristina.pennati@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="mt-6">
-              <img class="w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/image8.jpeg" alt="image8.jpeg" />
-            </div>
-
-            <div>
-              <div class="prose max-w-3xl text-sm text-ink/70 md:text-base leading-relaxed">
-                <p>Asociación artística socio cultural Anda que Anda, calle La Naval 15, 35008 Las Palmas de Gran Canaria, andaqueandaasociacion@gmail.com</p>
-              </div>
-            </div>
-        </article>
-
-        <article id="libreria" class="scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10">
-          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">La Librería de las Almas</h2>
-          <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
-            En una librería que solo abre al caer la noche, las historias no se venden: se despiertan. Los visitantes descubren que la
-            memoria también tiene páginas.
-          </p>
-          <p class="mt-2 max-w-3xl text-sm text-ink/70 md:text-base">
-            Una obra sensorial y poética, con humor delicado y una atmósfera de misterio cálido.
-          </p>
-          <div class="mt-6">
-            <div class="text-xs font-semibold tracking-widest text-ink/60">GALERÍA (9 fotos)</div>
-            <div class="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-1.jpeg" alt="La Librería de las Almas - Foto 1" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-2.jpeg" alt="La Librería de las Almas - Foto 2" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-3.jpeg" alt="La Librería de las Almas - Foto 3" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-4.jpeg" alt="La Librería de las Almas - Foto 4" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-5.jpeg" alt="La Librería de las Almas - Foto 5" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-6.jpeg" alt="La Librería de las Almas - Foto 6" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-7.jpeg" alt="La Librería de las Almas - Foto 7" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-8.jpeg" alt="La Librería de las Almas - Foto 8" />
-              <img class="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-black/10" src="./assets/libreria-9.jpeg" alt="La Librería de las Almas - Foto 9" />
+            
+            <h3 class="mt-6 font-serif text-xl font-semibold text-ink">Ficha técnica y reparto</h3>
+            <p><strong>Género:</strong> Comedia</p>
+            <p><strong>Guion:</strong> Nicoletta Cristina Pennati</p>
+            <p><strong>Directora:</strong> Ruth Plata Leon</p>
+            <p><strong>Duración:</strong> 60 minutos</p>
+            <p><strong>Reparto:</strong> Aitor Agero, Encarna Alemán, Jorge Coello, Angela De Prisco, Ana De Vega Gomez, Belinda Hernández García, Maryna Mezhuyeva Mezhuyeva, Ahmed Diop Wade, Jordán Hair Castro, Antonia Martín Soler, Borja Miranda Cano, Marco Siebel Hernita, José Luis Palomo</p>
+            <p><strong>Escenografía:</strong> Daniel Rodríguez Báez</p>
+            <p><strong>Dibujo:</strong> Libertad Reyes Torollo</p>
+            <p><strong>Gráfica:</strong> Nicoletta Cristina Pennati</p>
+            <p><strong>Fotografía:</strong> Franco Cappellari, Piergiorgio Pallara, Nicoletta Cristina Pennati</p>
+            <p><strong>Técnico luces y música:</strong> Anchor Machín Loyzance</p>
+            <p><strong>Promoción y Organización:</strong> Nicoletta Cristina Pennati, móvil 666133377, nicoletta.cristina.pennati@gmail.com</p>
+            <p class="mt-4">Asociación artística socio cultural Anda que Anda, calle La Naval 15, 35008 Las Palmas de Gran Canaria, andaqueandaasociacion@gmail.com</p>
+            <div class="my-4">
+              <img src="./assets/camino-8.jpg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
             </div>
           </div>
         </article>
 
-        <article id="amor" class="scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10">
+        <article id="libreria" class="drama-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
+          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">La Librería de las Almas</h2>
+          <div class="mt-3 max-w-3xl space-y-4 text-sm text-ink/70 md:text-base">
+            <div class="my-4">
+              <img src="./assets/image1.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p><strong>Sinopsis</strong></p>
+            <p>Imagínese una librería abierta todos los días del año. Pero solamente por la noche. Y, sobre todo, donde no se venden libros sino experiencias… y donde puede entrar solo quien ama leer y conoce un código secreto.</p>
+            <p>Esa es "La librería de las almas". Una Librería donde los admitidos se convierten en protagonistas de historias de la cuales ellos mismos son autores. Porque, a quien entra buscando respuestas, se le despiertan preguntas. ¿Y quién contesta a estas preguntas? Las almas de personajes famosos que viven en La librería: autores de historias o personajes de cuentos que se materializan mágicamente según la persona que los "llama" o los necesitas…</p>
+            <p>Como Hamlet, príncipe de Dinamarca, Cyrano de Bergerac, Marie Curie, Mary Shelley, Leonardo da Vinci, Mohammad Alí. Incluso la inolvidable Raffaella Carrá, el doctor Freud y la primatóloga Jane Goodall.</p>
+            <p>Y así, uno a uno, y cada uno a su manera, en las diferentes escenas, abordamos temas de actualidad como la igualdad de género, el arte, el amor LGBT, el racismo, la discapacidad, el arte, la poesía, la creatividad, la deforestación, la relación con los animales.</p>
+            <p>Todo con respeto y humor. Con música divertida y coreografías que también involucrarán al público.</p>
+            <div class="my-4">
+              <img src="./assets/image2.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>La compañía en el escenario del Centro Penitenciario Las Palmas I, Salto del Negro, antes de la actuación de sábado 22 de noviembre 2025.</p>
+            <div class="my-4">
+              <img src="./assets/image3.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>Mar Diaz Sosa (Jane Goodall en la obra) ensaya con Angela De Prisco. Sentado, como narrador, Víctor Rodríguez García.</p>
+            <p><strong>Compañía inclusiva</strong></p>
+            <p>Hay nueve actrices y nueve actores en esta obra, de varias nacionalidades: española, venezolana, ucraniana, francesa, italiana. Dos tienen más de 70 años: Lucia y José Luis. Ocho tienen discapacidades motrices o mentales. Dos de ellos son pacientes de la planta 5 del Hospital Insular de Las Palmas de Gran Canaria: Miguel, que es tetrapléjico y lleva 5 años viviendo en el hospital; Cris, que es parapléjico y después de vivir algunos meses en el hospital ahora vuelve dos veces la semana para la rehabilitación. El estar en el escenario para ellos es un gran reto, así como una manera de mirar hacia adelante e integrarse.</p>
+            <p>Nuestra asociación, Anda que Anda, ha organizado una gira con esta obra. La primera actuación es, sábado 22 de noviembre en la cárcel de Salto del Negro (primera vez que entra una compañía de teatro inclusivo), la segunda, el 12 de diciembre, en la Biblioteca de Arucas.</p>
+            <p>Más adelante la idea es crear otras obras ampliando la compañía a otras personas con discapacidad.</p>
+            <p>El único problema encontrado hasta ahora en los ensayos y en las actuaciones ha estado "técnico": la falta de salas de teatro con rampa que permitiera el acceso al escenario a personas que se desplazan en silla de rueda manual o eléctrica.</p>
+            <p><strong>Proyecto</strong></p>
+            <div class="my-4">
+              <img src="./assets/image4.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>José Luis Palomo ensayando con Miguel Plana en su habitación de la 5 planta del Hospital Insular</p>
+            <p>"La Librería de las Almas" es la primera obra del Proyecto de teatro inclusivo Todos somos Uno en el que, por primera vez, participan como actores pacientes del Hospital Insular. La obra demostra que el teatro es una herramienta poderosa y eficaz para ofrecer un reto a personas con discapacidad motriz aliviando el sufrimiento; denunciar y hablar de temas de actualidad, utilizando el humor para llegar al corazón de la gente de forma directa, conmovedora y divertida.</p>
+            <p><strong>El Proyecto tiene como objetivo reafirmar</strong></p>
+            <p>el Articulo 14 de la Constitución Española de 1978 donde se establece el principio de igualdad</p>
+            <p>lo que significa que todas las personas en España son consideradas iguales ante la ley, sin ningún tipo de discriminación por razones de nacimiento, raza, sexo, religión, opinión o cualquier otra condición personal o social.</p>
+            <p>Entonces, con "La Librería de las almas" queremos:</p>
+            <p>Visibilizar la realidad de personas con discapacidad y promover la inclusión, abogando por la creación de espacios accesibles en general y en particular en los escenarios de los teatros</p>
+            <p>Promover la necesidad de aceptar al «diferente», porque es igual a nosotros y nosotras: es la diversidad la que nos enriquece.</p>
+            <p>Combatir el racismo en todas sus facetas.</p>
+            <p>Denunciar la violencia de género y sensibilizar en favor de la igualdad.</p>
+            <p>Reclamar el derecho a amar sin distinciones convencionales de sexo y reivindicar el amor a cualquier edad de las personas adultas.</p>
+            <p>Generar y lanzar mensajes positivos e inspiradores; transmitir que la vida, pase lo que pase, es un don precioso y siempre merece la pena vivirla.</p>
+            <p>ACTUACIÓNES. El estreno de la obra tuvo lugar el 12 de junio de 2025, en el teatro Guiniguada de Las Palmas de Gran Canaria, en el marco de la Muestra de Teatro No Profesional. La segunda representación fue, el 16 de junio en IES La Isleta. Sábado 22 de noviembre en el Centro Penitenciario de Salto del Negro en Las Palmas. El 12 de diciembre en la Biblioteca de Aruca.</p>
+            <div class="my-4">
+              <img src="./assets/image5.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>La compañía antes del estrenoi de la obra en el Teatro Guiniguiada de Las Palmas, 12 de junio 2025, en el marco de la Muestra de Teatro No Profesional.</p>
+            <div class="my-4">
+              <img src="./assets/image6.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>.</p>
+            <div class="my-4">
+              <img src="./assets/image7.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>Salón de Actos IES La Isleta, 17 de junio 2025.</p>
+            <p><strong>Autora</strong></p>
+            <p>Nicoletta Cristina Pennati, nacida en Milán (Italia), reside en Las Palmas de Gran Canaria. Licenciada en Ciencias Políticas, se convirtió en periodista profesional en 1981. Pasó los últimos veinte años de su carrera trabajando para el semanario Io donna del Corriere della Sera, el principal diario de Italia. Tiene un máster en NLP. Ha escrito cuatro libros, entre ellos el best seller Prevenir el cáncer comiendo con gusto, varios guiones teatrales, entre ellos: ¡Buen Camino! El Camino de Santiago entre volcanes, La librería de las Almas y La Confraternidad de la Sardina, que se está preparando. Ha participado como voluntaria en el proyecto Teatro en la cárcel en el Centro Penitenciario Salto del Negro de Las Palmas con la Asociación Hestia. Ha ideado el Proyecto TeHospeCan, teatro en los Hospitales de Canarias con lo cual, por primera vez el teatro aficionado entra con regularidad, en los 14 hospitales públicos de las islas Canarias; el Proyecto TeTera (Teatro Terapia), desarrollado en los 4 distrito de Las Palmas de Gran Canaria en colaboración con la concejalía de Servicios Sociales del Ayuntamiento y el Proyecto Todos somos uno (teatro inclusivo) donde algunos de los actores tienen discapacidad motriz. Forma parte del grupo de escritores de "Canaria escribe teatro".</p>
+            <div class="my-4">
+              <img src="./assets/image9.png" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p><strong>Directora</strong></p>
+            <div class="my-4">
+              <img src="./assets/image10.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>Ruth Plata León, nacida en Las Palmas de Gran de Gran Canaria, vive en Santa Brigida. Se inició como locutora de radio lo que la llevó a formarse como actriz de doblaje, poniendo voz a documentales, anuncios y presentaciones. Ha estudiado interpretación con Victoria Teijeiro, Fernando Soto y ha participado en numerosos cursos de interpretación ante cámara con profesionales del sector. Ha actuado en varios cortometrajes de producción canaria y en obras de teatro. La ultimas con la dirección de Rosa Escrig: Polígono (Premio Replica 2025 para el mejor espectáculo), Con siete estrellas verdes y en micro teatro.  Actual formación de dirección teatral en Madrid en diversos cursos intensivos. Es docente en arte escénica con master en teatro terapia; ayudante de dirección Compañía Intellectus et Anima. Responsable de la parte artística del Proyecto TeTera, TeatroTerapia, que la Asociación Anda que Anda está desarrollando en los cuatro distritos del Ayuntamiento de Las Palmas y en el Ayuntamiento de San Nicolas de Tolentino. También directora del grupo teatral de la Once en Las Palmas.</p>
+            <div class="my-4">
+              <img src="./assets/image11.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p><strong>Escenografía</strong></p>
+            <p>La artista canaria Paqui Martín (al centro), conocida por sus "libros-objetos", ha creado, junto a sus alumnas y alumnos, una escenografía única y mágica. En la práctica, una sorprendente obra de arte colectiva única y original dentro de la obra teatral.</p>
+            <div class="my-4">
+              <img src="./assets/image12.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p><strong>Ficha Técnica y Reparto</strong></p>
+            <p><strong>Género: Comedia</strong></p>
+            <p><strong>Guion: Nicoletta Cristina Pennati</strong></p>
+            <p><strong>Directora: Ruth Plata León</strong></p>
+            <p><strong>Duración: 60 minutos</strong></p>
+            <p>Reparto: Encarna Alemán, Lucia Cruz Santana, Alexandre Cuny Pérez Vera, Angela De Prisco, Mar Diaz Sosa, Cris Godoy Aparicio, Maryna Mezhuyeva Mezhuyeva, José Luis Palomo, Miguel Planas Fernández, Víctor Rodríguez García,  Oona Mia Roosen, Yurena Roque Medina, Walter Christian Sainz-Rozas Schmitz, Mariano Sánchez Sánchez,</p>
+            <p>Escenografía: Paqui Martin y sus estudiantesGráfica: Nicoletta Cristina PennatiFotografía: Nicoletta Cristina PennatiTécnico luces y música: Anchor Machín Loyzance, Agustín Vega PereraPromoción y Organización: Nicoletta Cristina Pennati, móvil 666133377, andaqueandaasociacion@gmail.com</p>
+            <div class="my-4">
+              <img src="./assets/image14.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <div class="my-4">
+              <img src="./assets/image15.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <p>.</p>
+            <div class="my-4">
+              <img src="./assets/image17.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+            <div class="my-4">
+              <img src="./assets/image21.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+            </div>
+          </div>
+        </article>
+
+        <article id="amor" class="drama-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
           <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">El amor no caduca</h2>
           <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
             Entre cartas perdidas, promesas a medias y risas inesperadas, dos vidas vuelven a cruzarse cuando menos lo esperan.
@@ -382,7 +389,7 @@
           </div>
         </article>
 
-        <article id="cofradia" class="scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10">
+        <article id="cofradia" class="drama-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
           <div class="flex flex-wrap items-baseline justify-between gap-3">
             <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">La Cofradía de la Sardina</h2>
             <span class="rounded-full bg-stage-red px-3 py-1 text-xs font-semibold tracking-wide text-white"
@@ -411,7 +418,7 @@
           </div>
         </article>
 
-        <article id="amarga" class="scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10">
+        <article id="amarga" class="drama-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
           <div class="flex flex-wrap items-baseline justify-between gap-3">
             <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Amarga Navidad</h2>
             <span class="rounded-full bg-stage-red px-3 py-1 text-xs font-semibold tracking-wide text-white"
@@ -443,6 +450,79 @@
 
     <script>
       document.getElementById('year').textContent = String(new Date().getFullYear())
+
+      // Drama navigation logic
+      const dramaCards = document.querySelectorAll('.drama-card')
+      const dramaContents = document.querySelectorAll('.drama-content')
+      const backButton = document.getElementById('back-to-list')
+      const cardsSection = document.getElementById('drama-cards')
+
+      function showDrama(dramaId) {
+        // Hide all dramas
+        dramaContents.forEach(drama => {
+          drama.classList.add('hidden')
+        })
+        
+        // Show selected drama
+        const selectedDrama = document.getElementById(dramaId)
+        if (selectedDrama) {
+          selectedDrama.classList.remove('hidden')
+        }
+        
+        // Hide cards section and show back button
+        cardsSection.classList.add('hidden')
+        backButton.classList.remove('hidden')
+        
+        // Scroll to top of drama
+        if (selectedDrama) {
+          selectedDrama.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
+
+      function showAllDramas() {
+        // Hide all dramas
+        dramaContents.forEach(drama => {
+          drama.classList.add('hidden')
+        })
+        
+        // Show cards section and hide back button
+        cardsSection.classList.remove('hidden')
+        backButton.classList.add('hidden')
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+
+      // Handle card clicks
+      dramaCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault()
+          const dramaId = card.getAttribute('data-drama')
+          if (dramaId) {
+            showDrama(dramaId)
+            // Update URL hash
+            window.location.hash = dramaId
+          }
+        })
+      })
+
+      // Handle back button
+      const backLink = backButton.querySelector('a')
+      if (backLink) {
+        backLink.addEventListener('click', (e) => {
+          e.preventDefault()
+          showAllDramas()
+          window.location.hash = ''
+        })
+      }
+
+      // Handle initial hash on page load
+      if (window.location.hash) {
+        const dramaId = window.location.hash.substring(1)
+        if (document.getElementById(dramaId)) {
+          showDrama(dramaId)
+        }
+      }
     </script>
   </body>
 </html>
