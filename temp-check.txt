@@ -1,0 +1,278 @@
+﻿
+>           Conoce más sobre ANDA QUE ANDA: nuestra historia, misión y compromiso con el teatro en Las Palmas.
+          </p>
+        </header>
+  
+        <section class="mt-8 space-y-6">
+          <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
+>           <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Nuestra Historia</h2>
+            <div class="mt-3 max-w-3xl space-y-4 text-sm text-ink/70 md:text-base">
+              <div class="my-4">
+                <img src="./assets/historia-image2.jpeg" alt="Asociación innovadora" class="w-full rounded-xl 
+object-cover ring-1 ring-black/10" />
+              </div>
+              <p>
+                ANDA QUE ANDA nació a finales de abril de 2022 en Las Palmas de Gran Canaria y está inscrita en el 
+Registro de Asociaciones reconocido por el Gobierno de Canarias. El hecho de trabajar en proyectos de teatro social es 
+una de sus finalidades más importantes. Contamos con tres grupos de teatro amateur y con una treintena de actrices y 
+actores (7 con diferentes discapacidades) de distintas nacionalidades (española, italiana, francesa, ucraniana, 
+senegalesa, venezolana, alemana).
+              </p>
+              <p>
+                Desde su creación, la compañía cuenta con numerosas actuaciones de la primera comedia, "Buen Camino!" 
+en diversos teatros y salas culturales.
+              </p>
+              <p>
+                Entre ellos, en Las Palmas de Gran Canaria, muestra de teatro en: el Club Hespérides, el Real Club 
+Victoria, SIT, Sala Insular de Teatro; representaciones en: el Centro Cívico Suárez Naranjo, el Instituto IES La 
+Isleta, plaza del Pueblo para el Día de la Isleta. También en la Casa de la cultura de Moya. Estamos ensayando una 
+comedia: "La Cofradía de la Sardina" (estreno en noviembre 2026) y otra comedia callejera interactiva, "El Camino de 
+Santiago" (estreno en septiembre 2026), adaptación de "¡Buen Camino!".
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image3.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                El grupo también ha llevado la obra a los centros penitenciarios de Juan Grande y Salto del Negro y en 
+la 5 Planta del Hospital Insular. Numerosas las actuaciones callejeras (Teatro itinerante), donde los actores pasan de 
+un escenario a otro caminando e improvisando con el público. ¿Dónde? Cuatro veces en el paseo de las Canteras en Las 
+Palmas, en el Valle de Agaete, en Vegueta, el centro histórico de Las Palmas.
+              </p>
+              <p>
+                Festivales: actuación en la primera edición del Festival de Teatro Popular "Hermenegildo Socas Cruz" 
+en Icod de los Vinos, Tenerife; en el 1º "Festival Círculo en escena" del Círculo Mercantil de Las Palmas; en el 
+Festival TeTeatro en Güímar, Tenerife.
+              </p>
+              <p>
+                Con la obra "La Librería de las Almas" (teatro inclusivo), en el Festival de Teatro amateur 2025 en el 
+Teatro Guiniguada de Las Palmas de Gran Canaria; en el IES La Isleta, en el Centro Penitenciario de Salto del Negro, 
+en Las Palmas.
+              </p>
+              <p>
+                Anda que anda tiene una magnífica relación con el barrio de la Isleta, en Las Palmas, donde se sitúa. 
+Es parte del ForoXla Isleta y del Grupo Cultura Foro Isleta que agrupa asociaciones, entes y privados que trabajan en 
+el sector artístico, cultural y social del barrio. De hecho, las tres compañías ensayan en el Instituto de educación 
+secundaria IES La Isleta.
+              </p>
+              <p>
+                De momento estamos llevando a cabo tres proyectos pioneros:
+              </p>
+              <p>
+                <strong>TeHospiCan</strong>, Teatro en los Hospitales de Canarias. Proyecto pionero en España que 
+lleva espectáculos de teatro amateur en los hospitales en colaboración con los mismos Hospitales y el Gobierno de 
+Canarias.
+              </p>
+              <p>
+                Los objetivos son: utilizar el teatro como herramienta para humanizar los hospitales, aliviando la 
+estancia de pacientes, familiares, amigos y también el ánimo del personal hospitalario que trabaja cotidianamente en.
+              </p>
+              <p>
+                condiciones de estrés laborales. "Si las terapias médicas ayudan al cuerpo, el arte regenera el alma 
+de las personas, y crear un estado de ánimo alegre y relajado ayuda en la curación".
+              </p>
+              <p>
+                Los espectáculos se van a representar en espacios idóneos de las diferentes plantas de los Hospitales
+              </p>
+              <p>
+                canarios. El propósito es fijar cuatro fechas al año en cada Hospital. En cada fecha se puede 
+representar un solo espectáculo o más de uno dependiendo si hay posibilidades de horario.
+              </p>
+              <p>
+                El Proyecto no comporta coste para los hospitales.
+              </p>
+              <p>
+                Hasta ahora la compañía ha actuado: dos veces en el Hospital Insular, una vez en el Hospital 
+Universitario Doctor Negrín, una en el Hospital Polivalente, anexo al Juan Carlos I y en el Hospital Universitario de
+              </p>
+              <p>
+                Nuestra Señora de la Candelaria en Santa Cruz de Tenerife
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image4.jpeg" alt="D" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <div class="my-4">
+                <img src="./assets/historia-image5.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <div class="my-4">
+                <img src="./assets/historia-image6.jpeg" alt="Actuación en la 1 planta del Hospital Polivalente, Anexo 
+Juan Carlos I, Las Palmas de Gran Canaria" class="w-full rounded-xl object-cover ring-1 ring-black/10" />
+              </div>
+              <p>
+                (arriba). La compañía en la terraza de la 5 Planta Medular del Hospital Insular (abajo), Las Palmas de 
+Gran Canaria.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image7.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                Actuacion en la terraza de la 5 Planta Medular del Hospital Insular (abajo), Las Palmas de Gran 
+Canaria.
+              </p>
+              <p>
+                <strong>Todos somos uno.</strong> Proyecto de teatro inclusivo donde actúan personas con diferentes 
+discapacidades (motrices y mentales). Actuar como un reto. Actuar para socializar y sentirse vivos. Todos han mejorado 
+su calidad de vida y tienen un reto que los apasiona. Forman parte de un grupo de teatro con gente de diferentes 
+edades y diferentes nacionalidades, todas entusiastas y comprometidas, que los
+              </p>
+              <p>
+                empujan y animan a seguir adelante.
+              </p>
+              <p>
+                Juntos han estrenado la obra "La librería de las almas" el 12 de junio 2025 en el teatro Guiniguada de 
+Las Palmas y la están presentando en otros escenarios como en la cárcel de Salto del Negro y en la Biblioteca de 
+Arucas. Un esfuerzo de equipo con personas altamente motivadas.
+              </p>
+              <p>
+                "La Librería de las almas" no es solo teatro inclusivo, sino también un teatro que denuncia la 
+violencia de género y reafirma el Artículo 14 de la Constitución Española de 1978 donde se establece el principio de 
+igualdad lo que significa que todas las personas en España son consideradas iguales ante la ley, sin ningún tipo de 
+discriminación por razones de nacimiento, raza, sexo, religión, opinión o cualquier otra condición personal o social.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image8.jpeg" alt="La Librería de las almas" class="w-full rounded-xl 
+object-cover ring-1 ring-black/10" />
+              </div>
+              <p>
+                Actuación el 12 de junio 2025 en el Festival de teatro no profesional en el teatro Guiniguada de Las 
+Palmas de Gran Canaria
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image9.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                Actuación del 16 junio 2025 en el Instituto IES La Isleta, en Las Palmas de Gran Canaria.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image10.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                22 noviembre 2025. Actuación del grupo de La Librería de las almas en el Centro Penitenciario de Salto 
+del Negro, Las Palmas.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image11.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                <strong>TeTera (TeatroTerapia)</strong> para mayores, en colaboración con Servicios sociales y 
+comunitarios del Ayuntamiento de Las Palmas, en los 4 distritos de la ciudad. Un proyecto único en el panorama canario,
+              </p>
+              <p>
+                creado específicamente para mejorar la calidad de vida de los mayores; eficaz en la liberación de 
+emociones, en profundizar el autoconocimiento y la autoestima, en estimular la memoria, en combatir la depresión y en 
+abordar la discriminación por edad. Todo esto, entrenando la memoria, mejorando las relaciones, expresando las propias 
+necesidades y superando el miedo y la soledad.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image12.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                Ensayo general de los actores y actrices de los Distritos de Ciudad Alta, Centro y Lomo Apolinario.
+              </p>
+              <p>
+                Un curso donde los participantes han realizado un musical "El amor no caduca" representado, en julio 
+2025, por los participantes de los tres Distritos de Ciudad Alta, Centro y Lomo Apolinario y, en noviembre 2025, por 
+el Distrito Puerto Guanarteme, ambos
+              </p>
+              <p>
+                espectáculos en el Centro Cívico de la Ballena en Las Palmas con la dirección de Ruth Plata León. 
+Palabras clave: diversión, unión, creatividad y alegría. Un Proyecto que se está desarrollando también en San Nicola 
+de Tolentino, en la Aldea, gracias a la colaboración de la concejalía de Asuntos Social y que acabará con otro 
+espectáculo en junio 2026.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image13.jpeg" alt="Actuación en el Centro cívico de la Ballena de los 
+distritos Centro, Ciudad Alta y Tamaraceite, 11 julio 2025" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <div class="my-4">
+                <img src="./assets/historia-image14.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                Centro cívico de la Ballena, 14 noviembre 2025: la alcaldesa Carolina Daría con las actrices antes del 
+espectáculo.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image15.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                El grupo Distrito Puerto-Guanarteme con Carmen Luz Vargas, concejala de Servicios sociales del 
+Ayuntamiento de Las Palmas.
+              </p>
+              <div class="my-4">
+                <img src="./assets/historia-image16.jpeg" alt="" class="w-full rounded-xl object-cover ring-1 
+ring-black/10" />
+              </div>
+              <p>
+                Centro Cívico de la Ballena, 14 Noviembre 2025, las protagonistas del espectáculo.
+              </p>
+            </div>
+          </article>
+  
+          <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
+            <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Misión y Valores</h2>
+            <div class="mt-4 grid gap-4 md:grid-cols-2">
+              <div>
+                <div class="font-semibold text-ink">Misión</div>
+                <p class="mt-2 text-sm text-ink/70">
+                  Crear y producir teatro de calidad que refleje la diversidad cultural de nuestra ciudad, promoviendo 
+el
+                  arte escénico como herramienta de conexión y transformación social.
+                </p>
+              </div>
+              <div>
+                <div class="font-semibold text-ink">Valores</div>
+                <ul class="mt-2 space-y-1 text-sm text-ink/70">
+                  <li>• Compromiso con la calidad artística</li>
+                  <li>• Diversidad e inclusión</li>
+                  <li>• Conexión con la comunidad</li>
+                  <li>• Innovación y creatividad</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+  
+          <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
+            <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Actividades</h2>
+            <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
+              Además de nuestras producciones regulares, organizamos funciones solidarias, ensayos abiertos, talleres y
+              colaboraciones con otras entidades culturales de Las Palmas.
+            </p>
+          </article>
+        </section>
+      </main>
+  
+      <footer class="border-t border-black/10 bg-white">
+        <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-ink/70">
+          © <span id="year"></span> ANDA QUE ANDA · <a class="font-semibold text-stage-red" 
+href="./contact.html">Contacto</a>
+        </div>
+      </footer>
+  
+      <a
+        href="https://wa.me/393357150090?text=Hola%20ANDA%20QUE%20ANDA.%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n
+%20de%20pr%C3%B3ximas%20funciones."
+        target="_blank"
+        rel="noreferrer"
+        class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-stage-red px-4 py-3 text-sm 
+font-semibold text-white shadow-lg shadow-stage-red/20 transition hover:brightness-110"
+        aria-label="Reservas por WhatsApp"
+        title="Reservas por WhatsApp"
+        >WhatsApp</a
+      >
+  
+      <script>
+        document.getElementById('year').textContent = String(new Date().getFullYear())
+      </script>
+    </body>
+
+

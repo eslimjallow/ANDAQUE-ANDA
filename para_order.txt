@@ -1,0 +1,57 @@
+﻿[2] IMAGE: rId=rId6
+[4] TEXT: Sinopsis
+[6] TEXT: Imagínese una librería abierta todos los días del 
+[7] TEXT: Esa es “La librería de las almas”. Una Librería do
+[8] TEXT: Como Hamlet, príncipe de Dinamarca, Cyrano de Berg
+[9] TEXT: Y así, uno a uno, y cada uno a su manera, en las d
+[10] TEXT: Todo con respeto y humor. Con música divertida y c
+[14] IMAGE: rId=rId7
+[15] TEXT: La compañía en el escenario del Centro Penitenciar
+[19] IMAGE: rId=rId8
+[20] TEXT: Mar Diaz Sosa (Jane Goodall en la obra) ensaya con
+[22] TEXT: Compañía inclusiva
+[24] TEXT: Hay nueve actrices y nueve actores en esta obra, d
+[25] TEXT: Nuestra asociación, Anda que Anda, ha organizado u
+[26] TEXT: Más adelante la idea es crear otras obras ampliand
+[27] TEXT: El único problema encontrado hasta ahora en los en
+[28] TEXT: Proyecto
+[29] IMAGE: rId=rId9
+[30] TEXT: José Luis Palomo ensayando con Miguel Plana en su 
+[32] TEXT: “La Librería de las Almas” es la primera obra del 
+[34] TEXT: El Proyecto tiene como objetivo reafirmar
+[35] TEXT: el Articulo 14 de la Constitución Española de 1978
+[36] TEXT: lo que significa que todas las personas en España 
+[37] TEXT: Entonces, con “La Librería de las almas” queremos:
+[38] TEXT: <w:tab w:val="left" w:pos="721"/></w:tabs><w:autoS
+[39] TEXT: <w:tab w:val="left" w:pos="721"/></w:tabs><w:autoS
+[40] TEXT: <w:tab w:val="left" w:pos="720"/></w:tabs><w:autoS
+[41] TEXT: <w:tab w:val="left" w:pos="720"/></w:tabs><w:autoS
+[42] TEXT: <w:tab w:val="left" w:pos="721"/></w:tabs><w:autoS
+[43] TEXT: <w:tab w:val="left" w:pos="721"/></w:tabs><w:autoS
+[46] TEXT: ACTUACIÓNES. El estreno de la obra tuvo lugar el 1
+[51] IMAGE: rId=rId10
+[53] TEXT: La compañía antes del estrenoi de la obra en el Te
+[58] IMAGE: rId=.
+[59] IMAGE: rId=           
+[59] TEXT: Salón de Actos IES La Isleta, 17 de junio 2025.
+[60] TEXT: Autora
+[61] TEXT: Nicoletta Cristina Pennati, nacida en Milán (Itali
+[62] IMAGE: rId=rId14
+[63] TEXT: Directora
+[64] IMAGE: rId=Ruth
+[64] TEXT: Ruth Plata León, nacida en Las Palmas de Gran de G
+[67] IMAGE: rId=                                                       
+[67] TEXT: Escenografía
+[68] TEXT: La artista canaria Paqui Martín (al centro), conoc
+[69] IMAGE: rId=rId17
+[71] TEXT: Ficha Técnica y Reparto
+[74] TEXT: Género: Comedia
+[75] TEXT: Guion: Nicoletta Cristina Pennati
+[76] TEXT: Directora: Ruth Plata León
+[77] TEXT: Duración: 60 minutos
+[78] TEXT: Reparto: Encarna Alemán, Lucia Cruz Santana, Alexa
+[79] TEXT: Escenografía: Paqui Martin y sus estudiantesGráfic
+[82] IMAGE: rId=rId20
+[83] IMAGE: rId=.
+[84] IMAGE: rId=rId23
+[88] IMAGE: rId=rId27
