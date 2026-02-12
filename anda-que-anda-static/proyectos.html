@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>Proyectos — ANDA QUE ANDA</title>
-    <meta name="description" content="Proyectos actuales y futuros de ANDA QUE ANDA: obras en desarrollo y colaboraciones." />
+    <meta name="description" content="Proyectos de ANDA QUE ANDA: TeHospiCan, TeTera, Onderod y Cervantes." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,6 +30,15 @@
         },
       }
     </script>
+    <style>
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
   </head>
 
   <body class="bg-white font-sans text-ink">
@@ -65,7 +74,7 @@
           >Reservas</a
         >
       </div>
-      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-x-auto px-4 pb-3 md:hidden">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-x-auto px-4 pb-3 md:hidden scrollbar-hide">
         <a href="./index.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red">Inicio</a>
         <a href="./asociacion.html" class="text-sm font-semibold tracking-wide text-ink/80 hover:text-stage-red"
           >Asociación</a
@@ -90,49 +99,75 @@
       <header class="space-y-2">
         <h1 class="font-serif text-3xl font-semibold text-ink md:text-4xl">Proyectos</h1>
         <p class="max-w-3xl text-sm leading-relaxed text-ink/70 md:text-base">
-          Obras en desarrollo, colaboraciones y proyectos especiales que estamos creando para el futuro.
+          Conoce nuestros proyectos: TeHospiCan, TeTera, Onderod y Cervantes.
         </p>
       </header>
 
-      <section class="mt-8 space-y-6">
-        <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
-          <div class="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">La Cofradía de la Sardina</h2>
-            <span class="rounded-full bg-stage-red px-3 py-1 text-xs font-semibold tracking-wide text-white"
-              >En desarrollo</span
-            >
+      <section id="project-cards" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <a href="#tehospican" data-project="tehospican" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+          <div class="font-semibold text-ink">TeHospiCan</div>
+          <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto TeHospiCan.</p>
+          <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
+        </a>
+        <a href="#tetera" data-project="tetera" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+          <div class="font-semibold text-ink">TeTera</div>
+          <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto TeTera.</p>
+          <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
+        </a>
+        <a href="#onderod" data-project="onderod" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+          <div class="font-semibold text-ink">Onderod</div>
+          <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto Onderod.</p>
+          <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
+        </a>
+        <a href="#cervantes" data-project="cervantes" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+          <div class="font-semibold text-ink">Cervantes</div>
+          <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto Cervantes.</p>
+          <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
+        </a>
+      </section>
+
+      <div id="back-to-list" class="mt-6 hidden">
+        <a href="#project-cards" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
+          ← Volver a proyectos
+        </a>
+      </div>
+
+      <!-- Project content -->
+      <section class="mt-10 space-y-12">
+        <article id="tehospican" class="project-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
+          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">TeHospiCan</h2>
+          <div class="mt-6 space-y-6">
+            <p class="text-sm text-ink/70 md:text-base">
+              Información sobre el proyecto TeHospiCan. (Contenido a completar)
+            </p>
           </div>
-          <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
-            Una cofradía improbable se reúne para proteger un ritual que nadie entiende del todo. Entre máscaras y canción,
-            la ciudad se mira al espejo.
-          </p>
-          <p class="mt-2 max-w-3xl text-sm text-ink/70 md:text-base">
-            Actualmente en creación y ensayo. Pronto compartiremos fechas y primeras imágenes.
-          </p>
         </article>
 
-        <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
-          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Talleres y Formación</h2>
-          <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
-            Estamos desarrollando programas de formación teatral para la comunidad, incluyendo talleres de interpretación,
-            escritura dramática y dirección escénica.
-          </p>
+        <article id="tetera" class="project-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
+          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">TeTera</h2>
+          <div class="mt-6 space-y-6">
+            <p class="text-sm text-ink/70 md:text-base">
+              Información sobre el proyecto TeTera. (Contenido a completar)
+            </p>
+          </div>
         </article>
 
-        <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
-          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Colaboraciones</h2>
-          <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
-            Trabajamos en colaboración con otras entidades culturales de Las Palmas para crear proyectos interdisciplinarios
-            que enriquezcan la oferta cultural de la ciudad.
-          </p>
+        <article id="onderod" class="project-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
+          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Onderod</h2>
+          <div class="mt-6 space-y-6">
+            <p class="text-sm text-ink/70 md:text-base">
+              Información sobre el proyecto Onderod. (Contenido a completar)
+            </p>
+          </div>
         </article>
 
-        <article class="rounded-3xl border border-black/10 bg-white p-6 md:p-8">
-          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Funciones Solidarias</h2>
-          <p class="mt-3 max-w-3xl text-sm text-ink/70 md:text-base">
-            Continuamos con nuestro compromiso de realizar funciones adaptadas y solidarias en espacios como hospitales y
-            centros comunitarios, llevando el teatro a todos los rincones de la ciudad.
-          </p>
+        <article id="cervantes" class="project-content scroll-mt-24 rounded-3xl border border-black/10 bg-white p-6 md:p-10 hidden">
+          <h2 class="font-serif text-2xl font-semibold text-ink md:text-3xl">Cervantes</h2>
+          <div class="mt-6 space-y-6">
+            <p class="text-sm text-ink/70 md:text-base">
+              Información sobre el proyecto Cervantes. (Contenido a completar)
+            </p>
+          </div>
         </article>
       </section>
     </main>
@@ -155,7 +190,79 @@
 
     <script>
       document.getElementById('year').textContent = String(new Date().getFullYear())
+
+      // Project navigation logic
+      const projectCards = document.querySelectorAll('.project-card')
+      const projectContents = document.querySelectorAll('.project-content')
+      const backButton = document.getElementById('back-to-list')
+      const cardsSection = document.getElementById('project-cards')
+
+      function showProject(projectId) {
+        // Hide all projects
+        projectContents.forEach(project => {
+          project.classList.add('hidden')
+        })
+        
+        // Show selected project
+        const selectedProject = document.getElementById(projectId)
+        if (selectedProject) {
+          selectedProject.classList.remove('hidden')
+        }
+        
+        // Hide cards section and show back button
+        cardsSection.classList.add('hidden')
+        backButton.classList.remove('hidden')
+        
+        // Scroll to top of project
+        if (selectedProject) {
+          selectedProject.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
+
+      function showAllProjects() {
+        // Hide all projects
+        projectContents.forEach(project => {
+          project.classList.add('hidden')
+        })
+        
+        // Show cards section and hide back button
+        cardsSection.classList.remove('hidden')
+        backButton.classList.add('hidden')
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+
+      // Handle card clicks
+      projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault()
+          const projectId = card.getAttribute('data-project')
+          if (projectId) {
+            showProject(projectId)
+            // Update URL hash
+            window.location.hash = projectId
+          }
+        })
+      })
+
+      // Handle back button
+      const backLink = backButton.querySelector('a')
+      if (backLink) {
+        backLink.addEventListener('click', (e) => {
+          e.preventDefault()
+          showAllProjects()
+          window.location.hash = ''
+        })
+      }
+
+      // Handle initial hash on page load
+      if (window.location.hash) {
+        const projectId = window.location.hash.substring(1)
+        if (document.getElementById(projectId)) {
+          showProject(projectId)
+        }
+      }
     </script>
   </body>
 </html>
-
