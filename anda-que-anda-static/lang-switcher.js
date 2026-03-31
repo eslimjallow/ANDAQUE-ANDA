@@ -103,23 +103,33 @@
   function createSwitcher() {
     const host = document.createElement('div')
     host.id = 'aqa-lang-switcher'
+    host.classList.add('notranslate')
+    host.setAttribute('translate', 'no')
 
     const label = document.createElement('span')
     label.className = 'aqa-lang-label'
     label.textContent = 'Language'
+    label.classList.add('notranslate')
+    label.setAttribute('translate', 'no')
 
     const select = document.createElement('select')
     select.id = 'aqa-lang-select'
+    select.classList.add('notranslate')
+    select.setAttribute('translate', 'no')
 
     const base = document.createElement('option')
     base.value = 'es'
     base.textContent = 'Spanish'
+    base.classList.add('notranslate')
+    base.setAttribute('translate', 'no')
     select.appendChild(base)
 
     LANGS.forEach((lang) => {
       const option = document.createElement('option')
       option.value = lang.code
       option.textContent = lang.label
+      option.classList.add('notranslate')
+      option.setAttribute('translate', 'no')
       select.appendChild(option)
     })
 
