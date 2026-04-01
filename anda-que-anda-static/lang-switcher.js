@@ -11,44 +11,53 @@
     const style = document.createElement('style')
     style.textContent = `
       #aqa-lang-switcher {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      #aqa-lang-switcher.aqa-lang-switcher--floating {
         position: fixed;
         right: 18px;
         top: 82px;
         z-index: 9999;
-        display: flex;
-        align-items: center;
-        gap: 10px;
         padding: 9px 12px;
         border: 1px solid rgba(225, 29, 72, 0.2);
         border-radius: 14px;
         background: rgba(255, 255, 255, 0.98);
         box-shadow: 0 10px 24px rgba(17, 24, 39, 0.14);
         backdrop-filter: blur(8px);
-        font-family: Montserrat, sans-serif;
-        color: #111827;
       }
-      #aqa-lang-switcher .aqa-lang-label {
+      #aqa-lang-switcher.aqa-lang-switcher--inline {
+        position: relative;
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+      #aqa-lang-host {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-      }
-      #aqa-lang-switcher .aqa-lang-label::before {
-        content: "🌐";
-        font-size: 13px;
+        flex-shrink: 0;
       }
       #aqa-lang-switcher select {
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        padding: 6px 30px 6px 10px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 999px;
+        padding: 0 28px 0 10px;
+        height: 2.5rem;
+        min-height: 2.5rem;
         font-size: 12px;
         font-weight: 600;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.7);
         color: #111827;
         outline: none;
         cursor: pointer;
+        max-width: 9.5rem;
+      }
+      #aqa-lang-switcher.aqa-lang-switcher--inline select {
+        border-color: rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
       }
       #aqa-lang-switcher select:focus {
         border-color: rgba(225, 29, 72, 0.55);
@@ -73,15 +82,11 @@
         pointer-events: none;
       }
       @media (max-width: 640px) {
-        #aqa-lang-switcher {
+        #aqa-lang-switcher.aqa-lang-switcher--floating {
           right: 10px;
           top: auto;
           bottom: 84px;
           padding: 8px 10px;
-          gap: 8px;
-        }
-        #aqa-lang-switcher .aqa-lang-label {
-          font-size: 11px;
         }
       }
     `
@@ -101,25 +106,27 @@
   }
 
   function createSwitcher() {
+    const mountHost = document.getElementById('aqa-lang-host')
     const host = document.createElement('div')
     host.id = 'aqa-lang-switcher'
     host.classList.add('notranslate')
     host.setAttribute('translate', 'no')
-
-    const label = document.createElement('span')
-    label.className = 'aqa-lang-label'
-    label.textContent = 'Language'
-    label.classList.add('notranslate')
-    label.setAttribute('translate', 'no')
+    if (mountHost) {
+      host.classList.add('aqa-lang-switcher--inline')
+    } else {
+      host.classList.add('aqa-lang-switcher--floating')
+    }
 
     const select = document.createElement('select')
     select.id = 'aqa-lang-select'
+    select.setAttribute('aria-label', 'Idioma')
+    select.title = 'Idioma'
     select.classList.add('notranslate')
     select.setAttribute('translate', 'no')
 
     const base = document.createElement('option')
     base.value = 'es'
-    base.textContent = 'Spanish'
+    base.textContent = 'Español'
     base.classList.add('notranslate')
     base.setAttribute('translate', 'no')
     select.appendChild(base)
@@ -140,9 +147,12 @@
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
     })
 
-    host.appendChild(label)
     host.appendChild(select)
-    document.body.appendChild(host)
+    if (mountHost) {
+      mountHost.appendChild(host)
+    } else {
+      document.body.appendChild(host)
+    }
   }
 
   window.googleTranslateElementInit = function () {
