@@ -18,8 +18,8 @@
         theme: {
           extend: {
             colors: {
-              charcoal: '#0b0b0f',
-              'stage-red': '#e11d48',
+              charcoal: '#101828',
+              'stage-red': '#188040',
               ink: '#111827',
               mist: '#f3f4f6',
             },
@@ -105,33 +105,33 @@
         </p>
       </header>
 
-      <section id="project-cards" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <a href="#tehospican" data-project="tehospican" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+      <section id="project-cards" class="notranslate mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4" translate="no">
+        <button type="button" data-project="tehospican" class="project-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">TeHospiCan</div>
           <p class="mt-2 text-sm text-ink/70">Teatro en los hospitales de Canarias.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#tetera" data-project="tetera" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-project="tetera" class="project-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">TeTera</div>
           <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto TeTera.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#onderod" data-project="onderod" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-project="onderod" class="project-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">Onderod</div>
           <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto Onderod.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#cervantes" data-project="cervantes" class="project-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-project="cervantes" class="project-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">Cervantes</div>
           <p class="mt-2 text-sm text-ink/70">Información sobre el proyecto Cervantes.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
+        </button>
       </section>
 
       <div id="back-to-list" class="mt-6 hidden">
-        <a href="#project-cards" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
+        <button type="button" data-back-to-cards class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
           ← Volver a proyectos
-        </a>
+        </button>
       </div>
 
       <!-- Project content -->
@@ -278,7 +278,11 @@
       const backButton = document.getElementById('back-to-list')
       const cardsSection = document.getElementById('project-cards')
 
-      function showProject(projectId) {
+      function basePathAndQuery() {
+        return window.location.pathname + window.location.search
+      }
+
+      function showProject(projectId, smoothScroll) {
         // Hide all projects
         projectContents.forEach(project => {
           project.classList.add('hidden')
@@ -294,9 +298,8 @@
         cardsSection.classList.add('hidden')
         backButton.classList.remove('hidden')
         
-        // Scroll to top of project
         if (selectedProject) {
-          selectedProject.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          selectedProject.scrollIntoView({ behavior: smoothScroll ? 'smooth' : 'auto', block: 'start' })
         }
       }
 
@@ -314,36 +317,40 @@
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }
 
-      // Handle card clicks
       projectCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault()
+        card.addEventListener('click', () => {
           const projectId = card.getAttribute('data-project')
-          if (projectId) {
-            showProject(projectId)
-            // Update URL hash
-            window.location.hash = projectId
-          }
+          if (!projectId) return
+          history.pushState({ aqaProject: projectId }, '', `${basePathAndQuery()}#${projectId}`)
+          showProject(projectId, true)
         })
       })
 
-      // Handle back button
-      const backLink = backButton.querySelector('a')
-      if (backLink) {
-        backLink.addEventListener('click', (e) => {
-          e.preventDefault()
+      const backBtn = backButton.querySelector('[data-back-to-cards]')
+      if (backBtn) {
+        backBtn.addEventListener('click', () => {
+          history.replaceState({ aqaProject: null }, '', basePathAndQuery())
           showAllProjects()
-          window.location.hash = ''
         })
       }
 
-      // Handle initial hash on page load
-      if (window.location.hash) {
+      function applyHashFromUrl() {
+        if (!window.location.hash) {
+          showAllProjects()
+          return
+        }
         const projectId = window.location.hash.substring(1)
         if (document.getElementById(projectId)) {
-          showProject(projectId)
+          showProject(projectId, false)
         }
       }
+
+      if (window.location.hash) {
+        applyHashFromUrl()
+      }
+
+      window.addEventListener('hashchange', applyHashFromUrl)
+      window.addEventListener('popstate', applyHashFromUrl)
     </script>
   </body>
 </html>

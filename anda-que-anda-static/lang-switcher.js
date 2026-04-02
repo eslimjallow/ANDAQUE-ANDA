@@ -21,7 +21,7 @@
         top: 82px;
         z-index: 9999;
         padding: 9px 12px;
-        border: 1px solid rgba(225, 29, 72, 0.2);
+        border: 1px solid rgba(24, 128, 64, 0.2);
         border-radius: 14px;
         background: rgba(255, 255, 255, 0.98);
         box-shadow: 0 10px 24px rgba(17, 24, 39, 0.14);
@@ -60,8 +60,8 @@
         backdrop-filter: blur(8px);
       }
       #aqa-lang-switcher select:focus {
-        border-color: rgba(225, 29, 72, 0.55);
-        box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+        border-color: rgba(24, 128, 64, 0.55);
+        box-shadow: 0 0 0 3px rgba(24, 128, 64, 0.15);
       }
       .goog-te-banner-frame.skiptranslate,
       .goog-logo-link,
@@ -168,13 +168,35 @@
     const saved = localStorage.getItem('aqa_lang') || 'es'
     const uiSelect = document.getElementById('aqa-lang-select')
     if (uiSelect) uiSelect.value = saved
+    document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr'
+
+    // Spanish is the page default: do not poke Google's combo on load (avoids DOM churn / "jumping").
+    if (saved === 'es') return
 
     let tries = 0
     const timer = setInterval(() => {
       tries += 1
-      if (applyLanguage(saved) || tries > 20) clearInterval(timer)
-    }, 250)
-    document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr'
+      if (applyLanguage(saved) || tries > 40) clearInterval(timer)
+    }, 120)
+  }
+
+  function loadTranslateScript() {
+    if (document.getElementById('aqa-google-translate-script')) return
+    const script = document.createElement('script')
+    script.id = 'aqa-google-translate-script'
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+    script.async = true
+    document.body.appendChild(script)
+  }
+
+  function scheduleTranslateLoad() {
+    const delayMs = 550
+    const run = () => loadTranslateScript()
+    if (document.readyState === 'complete') {
+      setTimeout(run, delayMs)
+    } else {
+      window.addEventListener('load', () => setTimeout(run, delayMs), { once: true })
+    }
   }
 
   function init() {
@@ -184,10 +206,8 @@
     document.body.appendChild(hidden)
     createSwitcher()
 
-    const script = document.createElement('script')
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-    script.async = true
-    document.body.appendChild(script)
+    // Load translator after page scripts (hash navigation, etc.) have run — reduces flicker and broken layout.
+    scheduleTranslateLoad()
   }
 
   if (document.readyState === 'loading') {

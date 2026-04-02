@@ -17,8 +17,8 @@
         theme: {
           extend: {
             colors: {
-              charcoal: '#0b0b0f',
-              'stage-red': '#e11d48',
+              charcoal: '#101828',
+              'stage-red': '#188040',
               ink: '#111827',
               mist: '#f3f4f6',
             },
@@ -123,23 +123,23 @@
         </p>
       </header>
 
-      <section id="drama-cards" class="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <a href="#camino" data-drama="camino" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+      <section id="drama-cards" class="notranslate mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4" translate="no">
+        <button type="button" data-drama="camino" class="drama-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">El Camino de Santiago entre volcanes</div>
           <p class="mt-2 text-sm text-ink/70">Una travesía íntima entre fe, humor y paisajes imposibles.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#libreria" data-drama="libreria" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-drama="libreria" class="drama-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">La Librería de las Almas</div>
           <p class="mt-2 text-sm text-ink/70">Cada libro guarda una vida. Algunas quieren ser leídas de nuevo.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#amor" data-drama="amor" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-drama="amor" class="drama-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">El amor no caduca</div>
           <p class="mt-2 text-sm text-ink/70">Una comedia tierna sobre el tiempo, los reencuentros y lo que nunca se vence.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#cofradia" data-drama="cofradia" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-drama="cofradia" class="drama-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="flex items-start justify-between gap-3">
             <div class="font-semibold text-ink">La Cofradía de la Sardina</div>
             <span class="rounded-full bg-stage-red/10 px-2 py-1 text-xs font-semibold text-stage-red ring-1 ring-stage-red/20"
@@ -148,8 +148,8 @@
           </div>
           <p class="mt-2 text-sm text-ink/70">Un secreto se cocina a fuego lento… y huele a carnaval.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
-        <a href="#amarga" data-drama="amarga" class="drama-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
+        </button>
+        <button type="button" data-drama="amarga" class="drama-card rounded-2xl border border-black/10 bg-white p-6 text-left hover:border-stage-red/30 hover:shadow-sm">
           <div class="flex items-start justify-between gap-3">
             <div class="font-semibold text-ink">Amarga Navidad</div>
             <span class="rounded-full bg-stage-red/10 px-2 py-1 text-xs font-semibold text-stage-red ring-1 ring-stage-red/20"
@@ -158,13 +158,13 @@
           </div>
           <p class="mt-2 text-sm text-ink/70">Próximamente en cartel.</p>
           <div class="mt-4 text-sm font-semibold text-stage-red">Ver detalles →</div>
-        </a>
+        </button>
       </section>
 
       <div id="back-to-list" class="mt-6 hidden">
-        <a href="#drama-cards" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
+        <button type="button" data-back-to-cards class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
           ← Volver a producciones
-        </a>
+        </button>
       </div>
 
       <!-- Production blocks -->
@@ -471,7 +471,11 @@
       const backButton = document.getElementById('back-to-list')
       const cardsSection = document.getElementById('drama-cards')
 
-      function showDrama(dramaId) {
+      function basePathAndQuery() {
+        return window.location.pathname + window.location.search
+      }
+
+      function showDrama(dramaId, smoothScroll) {
         // Hide all dramas
         dramaContents.forEach(drama => {
           drama.classList.add('hidden')
@@ -487,9 +491,8 @@
         cardsSection.classList.add('hidden')
         backButton.classList.remove('hidden')
         
-        // Scroll to top of drama
         if (selectedDrama) {
-          selectedDrama.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          selectedDrama.scrollIntoView({ behavior: smoothScroll ? 'smooth' : 'auto', block: 'start' })
         }
       }
 
@@ -507,36 +510,40 @@
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }
 
-      // Handle card clicks
       dramaCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault()
+        card.addEventListener('click', () => {
           const dramaId = card.getAttribute('data-drama')
-          if (dramaId) {
-            showDrama(dramaId)
-            // Update URL hash
-            window.location.hash = dramaId
-          }
+          if (!dramaId) return
+          history.pushState({ aqaDrama: dramaId }, '', `${basePathAndQuery()}#${dramaId}`)
+          showDrama(dramaId, true)
         })
       })
 
-      // Handle back button
-      const backLink = backButton.querySelector('a')
-      if (backLink) {
-        backLink.addEventListener('click', (e) => {
-          e.preventDefault()
+      const backBtn = backButton.querySelector('[data-back-to-cards]')
+      if (backBtn) {
+        backBtn.addEventListener('click', () => {
+          history.replaceState({ aqaDrama: null }, '', basePathAndQuery())
           showAllDramas()
-          window.location.hash = ''
         })
       }
 
-      // Handle initial hash on page load
-      if (window.location.hash) {
+      function applyHashFromUrl() {
+        if (!window.location.hash) {
+          showAllDramas()
+          return
+        }
         const dramaId = window.location.hash.substring(1)
         if (document.getElementById(dramaId)) {
-          showDrama(dramaId)
+          showDrama(dramaId, false)
         }
       }
+
+      if (window.location.hash) {
+        applyHashFromUrl()
+      }
+
+      window.addEventListener('hashchange', applyHashFromUrl)
+      window.addEventListener('popstate', applyHashFromUrl)
     </script>
   </body>
 </html>
