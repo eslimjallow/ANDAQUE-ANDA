@@ -1,12 +1,47 @@
-# Extract exact order of images and text from DOCX
-$xmlDoc = [xml](Get-Content "dossier_document.xml" -Encoding UTF8)
-$relsDoc = [xml](Get-Content "dossier_rels.xml" -Encoding UTF8)
+# Extract EXACT order from Word document
+$folder = "C:\Users\eslim\ANDA QUE ANDA"
+$files = Get-ChildItem $folder -File -Filter "*.docx"
+$docxFile = $files | Where-Object {$_.Name -like '*libreria*' -or $_.Name -like '*Libreria*'} | Select-Object -First 1
 
-# Create mapping of rId to image filename
+if (-not $docxFile) {
+    Write-Error "Document not found"
+    exit 1
+}
+
+$docxPath = $docxFile.FullName
+Write-Host "Found document: $docxPath"
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+$zip = [System.IO.Compression.ZipFile]::OpenRead($docxPath)
+
+# Get document.xml
+$docEntry = $zip.Entries | Where-Object { $_.FullName -eq 'word/document.xml' }
+$docStream = $docEntry.Open()
+$docReader = New-Object System.IO.StreamReader($docStream, [System.Text.Encoding]::UTF8)
+$docXml = $docReader.ReadToEnd()
+$docReader.Close()
+$docStream.Close()
+
+# Get relationships
+$relsEntry = $zip.Entries | Where-Object { $_.FullName -eq 'word/_rels/document.xml.rels' }
+$relsStream = $relsEntry.Open()
+$relsReader = New-Object System.IO.StreamReader($relsStream, [System.Text.Encoding]::UTF8)
+$relsXml = $relsReader.ReadToEnd()
+$relsReader.Close()
+$relsStream.Close()
+
+$zip.Dispose()
+
+# Parse XML
+$xmlDoc = [xml]$docXml
+$relsDoc = [xml]$relsXml
+
+# Create image mapping
 $imageMap = @{}
-$nsRels = New-Object System.Xml.XmlNamespaceManager($relsDoc.NameTable)
-$nsRels.AddNamespace("r", "http://schemas.openxmlformats.org/package/2006/relationships")
-$rels = $relsDoc.SelectNodes("//r:Relationship[@Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/image']", $nsRels)
+$ns = New-Object System.Xml.XmlNamespaceManager($relsDoc.NameTable)
+$ns.AddNamespace("r", "http://schemas.openxmlformats.org/package/2006/relationships")
+$rels = $relsDoc.SelectNodes("//r:Relationship[@Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/image']", $ns)
 foreach ($rel in $rels) {
     $rId = $rel.Id
     $target = $rel.Target
@@ -14,70 +49,76 @@ foreach ($rel in $rels) {
     $imageMap[$rId] = $filename
 }
 
-# Parse document.xml to get exact order
-$ns = New-Object System.Xml.XmlNamespaceManager($xmlDoc.NameTable)
-$ns.AddNamespace("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
-$ns.AddNamespace("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships")
-$ns.AddNamespace("a", "http://schemas.openxmlformats.org/drawingml/2006/main")
-$ns.AddNamespace("pic", "http://schemas.openxmlformats.org/drawingml/2006/picture")
-$ns.AddNamespace("wp", "http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing")
+# Parse document in EXACT order
+$nsW = New-Object System.Xml.XmlNamespaceManager($xmlDoc.NameTable)
+$nsW.AddNamespace("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
+$nsW.AddNamespace("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships")
+$nsW.AddNamespace("a", "http://schemas.openxmlformats.org/drawingml/2006/main")
+$nsW.AddNamespace("pic", "http://schemas.openxmlformats.org/drawingml/2006/picture")
+$nsW.AddNamespace("wp", "http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing")
 
 $content = @()
-$paragraphs = $xmlDoc.SelectNodes("//w:p", $ns)
+$body = $xmlDoc.SelectSingleNode("//w:body", $nsW)
 
-foreach ($para in $paragraphs) {
-    # Check for images in this paragraph - check both inline and anchor drawings
-    $inlineDrawings = $para.SelectNodes(".//wp:inline", $ns)
-    $anchorDrawings = $para.SelectNodes(".//wp:anchor", $ns)
-    
-    foreach ($drawing in ($inlineDrawings + $anchorDrawings)) {
-        $blip = $drawing.SelectSingleNode(".//a:blip", $ns)
-        if ($blip) {
-            $embed = $blip.SelectSingleNode("./r:embed", $ns)
+foreach ($node in $body.ChildNodes) {
+    if ($node.LocalName -eq "p") {
+        # Paragraph - check for images and text
+        $para = $node
+        
+        # Get all drawings/inline images
+        $drawings = $para.SelectNodes(".//a:blip", $nsW)
+        $inlineDrawings = $para.SelectNodes(".//wp:inline", $nsW)
+        
+        # Process images first (they appear before text in XML)
+        foreach ($drawing in $drawings) {
+            $embed = $drawing.SelectSingleNode("./r:embed", $nsW)
             if ($embed) {
                 $rId = $embed.GetAttribute("r:embed")
                 if ($imageMap.ContainsKey($rId)) {
-                    $content += @{Type="Image"; Value=$imageMap[$rId]; Position=$content.Count}
+                    $content += @{Type="Image"; Value=$imageMap[$rId]}
                 }
             }
         }
-    }
-    
-    # Get text from paragraph
-    $textNodes = $para.SelectNodes(".//w:t", $ns)
-    $text = ""
-    foreach ($t in $textNodes) {
-        $text += $t.InnerText
-    }
-    
-    $text = $text.Trim()
-    # Only add non-empty text that's not just a period
-    if ($text -ne "" -and $text -ne "." -and $text.Length -gt 1) {
-        $content += @{Type="Text"; Value=$text; Position=$content.Count}
+        
+        foreach ($inline in $inlineDrawings) {
+            $blip = $inline.SelectSingleNode(".//a:blip", $nsW)
+            if ($blip) {
+                $embed = $blip.SelectSingleNode("./r:embed", $nsW)
+                if ($embed) {
+                    $rId = $embed.GetAttribute("r:embed")
+                    if ($imageMap.ContainsKey($rId)) {
+                        $content += @{Type="Image"; Value=$imageMap[$rId]}
+                    }
+                }
+            }
+        }
+        
+        # Get text
+        $text = ""
+        $textNodes = $para.SelectNodes(".//w:t", $nsW)
+        foreach ($t in $textNodes) {
+            $text += $t.InnerText
+        }
+        
+        if ($text.Trim() -ne "") {
+            $content += @{Type="Text"; Value=$text.Trim()}
+        }
     }
 }
 
-# Output the exact order
+# Output EXACT order
 $output = ""
-$i = 0
+$index = 1
 foreach ($item in $content) {
-    $i++
     if ($item.Type -eq "Image") {
-        $output += "[$i] IMAGE: $($item.Value)`n"
+        $output += "[$index] IMAGE: $($item.Value)`n`n"
     } else {
-        $output += "[$i] TEXT: $($item.Value)`n`n"
+        $output += "[$index] TEXT: $($item.Value)`n`n"
     }
+    $index++
 }
 
-$output | Out-File "dossier_exact_order.txt" -Encoding UTF8
-Write-Output "Exact order extracted. Total items: $($content.Count)"
-
-# Also create a JSON-like structure for easier parsing
-$jsonContent = @()
-foreach ($item in $content) {
-    $jsonContent += @{
-        Type = $item.Type
-        Value = $item.Value
-    }
-}
-$jsonContent | ConvertTo-Json | Out-File "dossier_order.json" -Encoding UTF8
+$output | Out-File "libreria_EXACT_order.txt" -Encoding UTF8
+Write-Output "Extracted $($content.Count) items"
+Write-Output "Images: $(($content | Where-Object {$_.Type -eq 'Image'}).Count)"
+Write-Output "Text blocks: $(($content | Where-Object {$_.Type -eq 'Text'}).Count)"
