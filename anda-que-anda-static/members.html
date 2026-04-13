@@ -817,11 +817,90 @@
         refreshBioToggles(root)
       }
 
+      function normalizeActorName(value) {
+        return (value || '')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim()
+      }
+
+      function sortCompaniasActors() {
+        const list = document.querySelector('#companias ul[role="list"]')
+        if (!list || list.dataset.sorted === '1') return
+
+        const desiredOrder = [
+          'ruth plata',
+          'angela de prisco',
+          'encarna aleman',
+          'jose luis palomo',
+          'walter',
+          'lucia cruz',
+          'miguel planas',
+          'mariano sanches',
+          'mar diaz',
+          'ana de vega',
+          'pepe batista',
+          'belinda',
+          'ahmet diop',
+          'maryna mezhuyeva',
+          'angel gonzalez',
+          'antonia martin',
+          'edgar gonzalez',
+          'carmen navarro',
+          'cris vicario',
+          'alexandre cuny',
+        ].map(normalizeActorName)
+
+        const aliases = {
+          'jose luis cuny': 'jose luis palomo',
+          'mariano sanchez': 'mariano sanches',
+          'alexander cluny': 'alexandre cuny',
+          'carmen navarro de tuero': 'carmen navarro',
+          'walter sainz rozas schmitz': 'walter',
+          'angel gonzalez lorenzo': 'angel gonzalez',
+          'ruth plata leon': 'ruth plata',
+          'encarna aleman ramirez': 'encarna aleman',
+          'belinda hernandez': 'belinda',
+        }
+
+        function canonicalActorName(rawName) {
+          const normalized = normalizeActorName(rawName)
+          const alias = aliases[normalized] || normalized
+          for (const candidate of desiredOrder) {
+            if (alias === candidate) return candidate
+            if (alias.includes(candidate)) return candidate
+          }
+          return alias
+        }
+
+        const rank = new Map(desiredOrder.map((name, index) => [name, index]))
+        const items = Array.from(list.querySelectorAll(':scope > li'))
+
+        const orderedItems = items.sort((a, b) => {
+          const canonicalA = canonicalActorName(a.querySelector('h3')?.textContent || '')
+          const canonicalB = canonicalActorName(b.querySelector('h3')?.textContent || '')
+          const rankA = rank.has(canonicalA) ? rank.get(canonicalA) : Number.MAX_SAFE_INTEGER
+          const rankB = rank.has(canonicalB) ? rank.get(canonicalB) : Number.MAX_SAFE_INTEGER
+          if (rankA !== rankB) return rankA - rankB
+          return canonicalA.localeCompare(canonicalB, 'es')
+        })
+
+        orderedItems.forEach((item) => {
+          list.appendChild(item)
+        })
+
+        list.dataset.sorted = '1'
+      }
+
       // Section navigation logic
       const sectionCards = document.querySelectorAll('.section-card')
       const sectionContents = document.querySelectorAll('.section-content')
       const backButton = document.getElementById('back-to-list')
       const cardsSection = document.getElementById('section-cards')
+      sortCompaniasActors()
 
       function basePathAndQuery() {
         return window.location.pathname + window.location.search
