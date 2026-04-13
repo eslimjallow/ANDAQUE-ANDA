@@ -76,7 +76,7 @@
   }
 
   function setCookie(lang) {
-    var value = '/auto/' + lang
+    var value = lang === 'es' ? '/es/es' : '/auto/' + lang
     document.cookie = 'googtrans=' + value + ';path=/'
     document.cookie = 'googtrans=' + value + ';path=/;domain=' + window.location.hostname
   }
@@ -84,7 +84,14 @@
   function applyGoogleLanguage(lang) {
     var combo = document.querySelector('select.goog-te-combo')
     if (!combo) return false
-    combo.value = lang
+    var hasOption = combo.querySelector('option[value="' + lang + '"]')
+    if (hasOption) {
+      combo.value = lang
+    } else if (lang === 'es') {
+      combo.selectedIndex = 0
+    } else {
+      return false
+    }
     combo.dispatchEvent(new Event('change'))
     return true
   }
@@ -92,6 +99,18 @@
   function setLanguage(lang) {
     var selected = lang || 'es'
     localStorage.setItem('aqa-lang', selected)
+
+    if (selected === 'es') {
+      document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT'
+      document.cookie =
+        'googtrans=;path=/;domain=' +
+        window.location.hostname +
+        ';expires=Thu, 01 Jan 1970 00:00:00 GMT'
+      // Ensure visitors return to original Spanish immediately.
+      window.location.reload()
+      return
+    }
+
     setCookie(selected)
     if (!applyGoogleLanguage(selected)) {
       window.location.reload()
