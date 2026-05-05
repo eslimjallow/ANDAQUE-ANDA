@@ -70,6 +70,11 @@
         max-width: 100%;
         height: auto;
       }
+      /* Fallback icon sizing when utility CSS fails to load */
+      svg:not([width]) {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
     </style>
   </head>
 
@@ -212,7 +217,7 @@
               <div class="text-xs font-semibold tracking-widest text-white/70">PRÓXIMO EVENTO</div>
               <div class="mt-2 text-lg font-semibold" id="nextTitle">Las Caras del Amor</div>
               <div class="mt-1 text-sm text-white/75" id="nextMeta">
-                Mié, 6 May 2026 · 17:30 · Hospital Universitario Dr. Negrín, Las Palmas
+                Jue, 7 May 2026 · 19:30 · Bar Tenesor, Las Palmas
               </div>
             </div>
           </div>
@@ -409,9 +414,41 @@
       // Footer year
       document.getElementById('year').textContent = String(new Date().getFullYear())
 
-      // Countdown (edit this date/time if needed)
-      const TARGET_ISO = '2026-05-06T17:30:00+01:00'
-      const target = new Date(TARGET_ISO).getTime()
+      // Próximos eventos: el sistema selecciona automáticamente el más cercano en el futuro.
+      const EVENTS = [
+        {
+          iso: '2026-05-07T19:30:00+01:00',
+          title: 'Las Caras del Amor',
+          meta: 'Jue, 7 May 2026 · 19:30 · Bar Tenesor, Las Palmas',
+        },
+        {
+          iso: '2026-05-14T18:30:00+01:00',
+          title: 'Las Caras del Amor',
+          meta: 'Jue, 14 May 2026 · 18:30 · IES La Isleta, Calle Juan Rejón 58, Las Palmas',
+        },
+        {
+          iso: '2026-05-22T17:30:00+01:00',
+          title: 'Las Caras del Amor',
+          meta: 'Jue, 22 May 2026 · 17:30 · Hospital Insular, 5 planta medular',
+        },
+        {
+          iso: '2026-05-26T17:30:00+01:00',
+          title: 'La Librería de las Almas',
+          meta: 'Mar, 26 May 2026 · Hospital Polivalente, anexo Juan Carlos I',
+        },
+        {
+          iso: '2026-06-18T18:00:00+01:00',
+          title: 'La Librería de las Almas',
+          meta: 'Jue, 18 Jun 2026 · Centro penitenciario Salto del Negro, Las Palmas',
+        },
+      ]
+
+      const nowTs = Date.now()
+      const nextEvent = EVENTS.find((evt) => new Date(evt.iso).getTime() > nowTs) || EVENTS[EVENTS.length - 1]
+      const target = new Date(nextEvent.iso).getTime()
+
+      document.getElementById('nextTitle').textContent = nextEvent.title
+      document.getElementById('nextMeta').textContent = nextEvent.meta
 
       const elDays = document.getElementById('cdDays')
       const elHours = document.getElementById('cdHours')

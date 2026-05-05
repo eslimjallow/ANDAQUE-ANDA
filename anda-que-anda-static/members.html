@@ -332,7 +332,7 @@
               <div class="overflow-hidden rounded-xl ring-1 ring-black/10">
                 <img
                   src="./assets/members/jose-luis-palomo.jpeg"
-                  alt="Jos&eacute; Luis Cuny, actor"
+                  alt="Jos&eacute; Luis Palomo, actor"
                   class="aspect-[3/4] w-full object-cover object-center"
                   loading="lazy"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
@@ -341,7 +341,7 @@
                   <span class="font-serif text-4xl font-semibold text-ink">J</span>
                 </div>
               </div>
-              <h3 class="mt-4 font-serif text-lg font-semibold text-ink">Jos&eacute; Luis Cuny</h3>
+              <h3 class="mt-4 font-serif text-lg font-semibold text-ink">Jos&eacute; Luis Palomo</h3>
               <p class="mt-1 text-xs font-medium uppercase tracking-wide text-ink/50">Actor</p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
@@ -566,22 +566,6 @@
                 </div>
               </div>
               <h3 class="mt-4 font-serif text-lg font-semibold text-ink">Antonia Martin</h3>
-              <p class="mt-1 text-xs font-medium uppercase tracking-wide text-ink/50">Actriz</p>
-            </li>
-            <li class="rounded-2xl border border-black/10 bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
-              <div class="overflow-hidden rounded-xl ring-1 ring-black/10">
-                <img
-                  src="./assets/members/antonia-marthin-solero.jpeg"
-                  alt="Antonia Marthin Solero, actriz"
-                  class="aspect-[3/4] w-full object-cover object-[50%_20%]"
-                  loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-                />
-                <div class="avatar grid aspect-[3/4] w-full place-items-center bg-mist" style="display: none;" aria-hidden="true">
-                  <span class="font-serif text-4xl font-semibold text-ink">A</span>
-                </div>
-              </div>
-              <h3 class="mt-4 font-serif text-lg font-semibold text-ink">Antonia Marthin Solero</h3>
               <p class="mt-1 text-xs font-medium uppercase tracking-wide text-ink/50">Actriz</p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
@@ -881,7 +865,6 @@
           'maryna mezhuyeva',
           'angel gonzalez',
           'antonia martin',
-          'antonia marthin solero',
           'edgar gonzalez',
           'carmen navarro',
           'cris vicario',
@@ -903,7 +886,8 @@
         function canonicalActorName(rawName) {
           const normalized = normalizeActorName(rawName)
           const alias = aliases[normalized] || normalized
-          for (const candidate of desiredOrder) {
+          const candidatesLongestFirst = [...desiredOrder].sort((a, b) => b.length - a.length)
+          for (const candidate of candidatesLongestFirst) {
             if (alias === candidate) return candidate
             if (alias.includes(candidate)) return candidate
           }
