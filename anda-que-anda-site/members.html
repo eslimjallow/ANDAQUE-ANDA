@@ -127,7 +127,11 @@
         </p>
       </header>
 
-      <section id="section-cards" class="mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <section
+        id="section-cards"
+        class="notranslate mt-6 sm:mt-8 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4"
+        translate="no"
+      >
         <a href="#directivo" data-section="directivo" class="section-card rounded-2xl border border-black/10 bg-white p-6 hover:border-stage-red/30 hover:shadow-sm">
           <div class="font-semibold text-ink">Directivo</div>
           <p class="mt-2 text-sm text-ink/70">Conoce al equipo directivo de la asociaci&oacute;n.</p>
@@ -146,7 +150,11 @@
       </section>
 
       <div id="back-to-list" class="mt-6 hidden">
-        <a href="#section-cards" class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red">
+        <a
+          href="#section-cards"
+          data-back-to-cards
+          class="inline-flex items-center gap-2 text-sm font-semibold text-ink/80 hover:text-stage-red"
+        >
           &larr; Volver a secciones
         </a>
       </div>
@@ -859,7 +867,6 @@
           'walter',
           'lucia cruz',
           'miguel planas',
-          'miguel manuel percaz',
           'victor rodriguez',
           'mariano sanches',
           'mar diaz',
@@ -874,6 +881,7 @@
           'carmen navarro',
           'cris vicario',
           'alexandre cuny',
+          'miguel manuel percaz',
         ].map(normalizeActorName)
 
         const aliases = {
@@ -918,32 +926,32 @@
         list.dataset.sorted = '1'
       }
 
-      // Section navigation logic
+      // Section navigation logic (history + hash: back/forward and deep links stay in sync)
       const sectionCards = document.querySelectorAll('.section-card')
       const sectionContents = document.querySelectorAll('.section-content')
       const backButton = document.getElementById('back-to-list')
       const cardsSection = document.getElementById('section-cards')
       sortCompaniasActors()
 
-      function showSection(sectionId) {
-        // Hide all sections
-        sectionContents.forEach(section => {
+      function basePathAndQuery() {
+        return window.location.pathname + window.location.search
+      }
+
+      function showSection(sectionId, smoothScroll) {
+        sectionContents.forEach((section) => {
           section.classList.add('hidden')
         })
-        
-        // Show selected section
+
         const selectedSection = document.getElementById(sectionId)
         if (selectedSection) {
           selectedSection.classList.remove('hidden')
         }
-        
-        // Hide cards section and show back button
-        cardsSection.classList.add('hidden')
-        backButton.classList.remove('hidden')
-        
-        // Scroll to top of section
+
+        if (cardsSection) cardsSection.classList.add('hidden')
+        if (backButton) backButton.classList.remove('hidden')
+
         if (selectedSection) {
-          selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          selectedSection.scrollIntoView({ behavior: smoothScroll ? 'smooth' : 'auto', block: 'start' })
         }
         if (sectionId === 'directivo') {
           setupDirectivoBios()
@@ -954,52 +962,58 @@
       }
 
       function showAllSections() {
-        // Hide all sections
-        sectionContents.forEach(section => {
+        sectionContents.forEach((section) => {
           section.classList.add('hidden')
         })
-        
-        // Show cards section and hide back button
-        cardsSection.classList.remove('hidden')
-        backButton.classList.add('hidden')
-        
-        // Scroll to top
+
+        if (cardsSection) cardsSection.classList.remove('hidden')
+        if (backButton) backButton.classList.add('hidden')
+
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }
 
-      // Handle card clicks
-      sectionCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault()
-          const sectionId = card.getAttribute('data-section')
-          if (sectionId) {
-            showSection(sectionId)
-            // Update URL hash
-            window.location.hash = sectionId
-          }
+      if (backButton && cardsSection) {
+        sectionCards.forEach((card) => {
+          card.addEventListener('click', (e) => {
+            e.preventDefault()
+            const sectionId = card.getAttribute('data-section')
+            if (!sectionId) return
+            history.pushState({ aqaSection: sectionId }, '', `${basePathAndQuery()}#${sectionId}`)
+            showSection(sectionId, true)
+          })
         })
-      })
 
-      // Handle back button
-      const backLink = backButton.querySelector('a')
-      if (backLink) {
-        backLink.addEventListener('click', (e) => {
-          e.preventDefault()
-          showAllSections()
-          window.location.hash = ''
-        })
-      }
-
-      // Handle initial hash on page load
-      if (window.location.hash) {
-        const sectionId = window.location.hash.substring(1)
-        // Redirect fotografia to redes-sociales
-        if (sectionId === 'fotografia') {
-          showSection('redes-sociales')
-          window.location.hash = 'redes-sociales'
-        } else if (document.getElementById(sectionId)) {
-          showSection(sectionId)
+        const backBtn = backButton.querySelector('[data-back-to-cards]')
+        if (backBtn) {
+          backBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            history.replaceState({ aqaSection: null }, '', basePathAndQuery())
+            showAllSections()
+          })
         }
+
+        function applyHashFromUrl() {
+          if (!window.location.hash) {
+            showAllSections()
+            return
+          }
+          const sectionId = window.location.hash.substring(1)
+          if (sectionId === 'fotografia') {
+            showSection('redes-sociales', false)
+            history.replaceState({ aqaSection: 'redes-sociales' }, '', `${basePathAndQuery()}#redes-sociales`)
+            return
+          }
+          if (document.getElementById(sectionId)) {
+            showSection(sectionId, false)
+          }
+        }
+
+        if (window.location.hash) {
+          applyHashFromUrl()
+        }
+
+        window.addEventListener('hashchange', applyHashFromUrl)
+        window.addEventListener('popstate', applyHashFromUrl)
       }
     </script>
     <script src="./language-switcher.js"></script>

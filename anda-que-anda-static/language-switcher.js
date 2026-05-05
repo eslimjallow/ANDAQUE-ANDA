@@ -13,7 +13,7 @@
 
     var style = document.createElement('style')
     style.textContent =
-      '#aqa-lang-switcher{background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:9999px;padding:6px 10px;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,system-ui,sans-serif;margin-left:8px}#aqa-lang-switcher label{font-size:12px;color:#111827;font-weight:600}#aqa-lang-select{border:none;background:transparent;color:#111827;font-size:12px;font-weight:700;outline:none;cursor:pointer}@media (max-width:640px){#aqa-lang-switcher{padding:5px 8px}#aqa-lang-switcher label{display:none}}'
+      '#aqa-lang-switcher{position:relative;z-index:60;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:9999px;padding:6px 10px;display:inline-flex;align-items:center;gap:8px;font-family:Montserrat,system-ui,sans-serif;margin-left:8px;touch-action:manipulation}#aqa-lang-switcher label{font-size:12px;color:#111827;font-weight:600}#aqa-lang-select{border:none;background:transparent;color:#111827;font-size:12px;font-weight:700;outline:none;cursor:pointer;touch-action:manipulation}@media (max-width:640px){#aqa-lang-switcher{padding:5px 8px}#aqa-lang-switcher label{display:none}}'
     document.head.appendChild(style)
 
     var wrap = document.createElement('div')
