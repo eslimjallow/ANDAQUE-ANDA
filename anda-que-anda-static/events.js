@@ -59,6 +59,16 @@
       note: 'Sin reserva · donativo agradecido',
     },
     {
+      iso: '2026-06-09T17:30:00+01:00',
+      title: 'Las Caras del Amor',
+      dateLabel: 'Mar, 9 Jun 2026',
+      time: '17:30',
+      venue: 'Hospital Polivalente',
+      address: 'Anexo Juan Carlos I',
+      mapQuery: 'Hospital+Polivalente,+anexo+Juan+Carlos+I,+Las+Palmas',
+      note: 'Proyecto TeHospiCan · Teatro en los Hospitales de Canarias',
+    },
+    {
       iso: '2026-06-18T18:00:00+01:00',
       title: 'La Librería de las Almas',
       dateLabel: 'Jue, 18 Jun 2026',
@@ -74,6 +84,7 @@
     if (evt.time) parts.push(evt.time)
     parts.push(evt.venue)
     if (evt.address && evt.address !== evt.venue) parts.push(evt.address.split(',')[0])
+    if (evt.note) parts.push(evt.note)
     return parts.join(' · ')
   }
 
