@@ -77,6 +77,15 @@
       address: 'Las Palmas',
       mapQuery: 'Centro+Penitenciario+Salto+del+Negro,+Las+Palmas',
     },
+    {
+      iso: '2026-12-03T18:00:00+00:00',
+      title: 'Función',
+      dateLabel: 'Jue, 3 Dic 2026',
+      time: '18:00',
+      venue: 'Biblioteca Insular',
+      address: 'Las Palmas de Gran Canaria',
+      mapQuery: 'Biblioteca+Insular,+Las+Palmas+de+Gran+Canaria',
+    },
   ]
 
   window.AQA_eventMeta = function (evt) {
