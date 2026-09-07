@@ -37,13 +37,13 @@
     </script>
     <style>
       .hero-overlay {
-        background: radial-gradient(1000px 500px at 20% 0%, rgba(24, 128, 64, 0.35), transparent 60%),
-          linear-gradient(180deg, rgba(11, 11, 15, 0.15), rgba(11, 11, 15, 0.92));
+        background: radial-gradient(1000px 500px at 20% 0%, rgba(24, 128, 64, 0.25), transparent 60%),
+          linear-gradient(180deg, rgba(11, 11, 15, 0.1), rgba(11, 11, 15, 0.75));
       }
-      .hero-bg {
-        background-image: radial-gradient(circle at 20% 10%, rgba(24, 128, 64, 0.25), transparent 40%),
-          radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.08), transparent 45%),
-          linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(11, 11, 15, 1));
+      @media (min-width: 1024px) {
+        .hero-section {
+          aspect-ratio: 16 / 9;
+        }
       }
       /* Mobile optimizations */
       @media (max-width: 640px) {
@@ -165,16 +165,23 @@
 
       <main class="mx-auto max-w-6xl px-4 py-6 sm:py-8 md:py-10">
         <!-- Hero -->
-        <section class="relative overflow-hidden rounded-3xl bg-charcoal">
+        <section class="hero-section relative overflow-hidden rounded-3xl bg-charcoal">
+          <img
+            src="/homepage-hero.jpg"
+            alt="Ensayo de teatro inclusivo ANDA QUE ANDA"
+            class="block w-full h-auto lg:hidden"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+          />
           <div
-            class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            class="absolute inset-0 hidden bg-contain bg-center bg-no-repeat lg:block"
             style="background-image: url('/homepage-hero.jpg');"
             aria-hidden="true"
           ></div>
-          <div class="hero-bg absolute inset-0 opacity-90" aria-hidden="true"></div>
-          <div class="hero-overlay absolute inset-0" aria-hidden="true"></div>
+          <div class="hero-overlay absolute inset-0 hidden lg:block" aria-hidden="true"></div>
 
-          <div class="relative grid gap-6 sm:gap-8 px-4 sm:px-6 py-5 sm:py-7 md:grid-cols-12 md:gap-10 md:px-12 md:py-9">
+          <div class="relative grid gap-6 bg-charcoal px-4 py-5 sm:gap-8 sm:px-6 sm:py-7 md:grid-cols-12 md:gap-10 md:px-12 md:py-9 lg:absolute lg:inset-0 lg:bg-transparent">
             <div class="md:col-span-7">
               <div
                 class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-widest text-white ring-1 ring-white/15"
