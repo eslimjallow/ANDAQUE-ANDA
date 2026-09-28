@@ -78,6 +78,16 @@
       mapQuery: 'Centro+Penitenciario+Salto+del+Negro,+Las+Palmas',
     },
     {
+      iso: '2026-09-29T17:30:00+01:00',
+      title: 'Las Caras del Amor',
+      dateLabel: 'Mar, 29 Sep 2026',
+      time: '17:30',
+      venue: 'Hospital Juan Carlos I',
+      address: 'Las Palmas de Gran Canaria',
+      mapQuery: 'Hospital+Juan+Carlos+I,+Las+Palmas+de+Gran+Canaria',
+      note: 'Proyecto TeHospiCan · Teatro en los Hospitales de Canarias',
+    },
+    {
       iso: '2026-12-03T18:00:00+00:00',
       title: 'Función',
       dateLabel: 'Jue, 3 Dic 2026',
