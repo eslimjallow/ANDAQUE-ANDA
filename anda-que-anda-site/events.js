@@ -88,6 +88,16 @@
       note: 'Proyecto TeHospiCan · Teatro en los Hospitales de Canarias',
     },
     {
+      iso: '2026-10-30T18:00:00+00:00',
+      title: 'La Librería de las Almas',
+      dateLabel: 'Vie, 30 Oct 2026',
+      time: '18:00',
+      venue: 'Salón de Actos Hospital Insular',
+      address: 'Las Palmas de Gran Canaria',
+      mapQuery: 'Hospital+Insular,+Las+Palmas+de+Gran+Canaria',
+      note: 'Proyecto TeHospiCan · Teatro en los Hospitales de Canarias',
+    },
+    {
       iso: '2026-12-03T18:00:00+00:00',
       title: 'Función',
       dateLabel: 'Jue, 3 Dic 2026',
